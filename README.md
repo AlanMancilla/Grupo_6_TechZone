@@ -3,4 +3,5 @@
 ## Descipcion 
 
 ### Grupo 
-Sajama Ernesto Alvaro 
+Sajama Ernesto Alvaro
+Juan Alexander Madrigal
