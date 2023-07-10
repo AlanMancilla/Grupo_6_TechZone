@@ -13,7 +13,7 @@ Nuestro equipo de **profesionales** capacitados y amables está listo para brind
 ## PRESENTACION GRUPO 6:
 - Valentin Iriarte: Tengo 18 años, estudio Analista Programador Universitario y me especializo en diseño grafico y editor de video.
 - Juan Alexander Madrigal: Tengo 22 años, Actualmente estoy terminando mi secundario, y tambien soy fan de los mmorpg
-- Sajama Ernesto Alvaro: Soy un estudiante universitario de 22 años, apasionado por los videojuegos. :shipit:
+- Sajama Ernesto Alvaro: Soy un estudiante universitario de 22 años, apasionado por los videojuegos. :beaver:
 - Amador Nicolás Nestor David: Tengo 24 años, soy estudiante de laboratorio y tengo una forrajeria, me gusta todo lo que tenga que ver con computadoras. :shipit:
   
 ### Grupo 
