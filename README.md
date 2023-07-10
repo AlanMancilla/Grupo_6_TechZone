@@ -14,8 +14,10 @@ Nuestro equipo de **profesionales** capacitados y amables está listo para brind
 - Valentin Iriarte: Tengo 18 años, estudio Analista Programador Universitario y me especializo en diseño grafico y editor de video.
 - Juan Alexander Madrigal: Tengo 22 años, Actualmente estoy terminando mi secundario, y tambien soy fan de los mmorpg
 - Sajama Ernesto Alvaro: Soy un estudiante universitario de 22 años, apasionado por los videojuegos. :shipit:
-
+- Amador Nicolás Nestor David: Tengo 24 años, soy estudiando de laboratorio y tengo una forrajeria, me gusta todo lo que tenga que ver con computadoras. :shipit:
+  
 ### Grupo 
 - Sajama Ernesto Alvaro
 - Juan Alexander Madrigal
 - Iriarte Gloss Valentin Mateo 
+- Amador Nicolás Nestor David
