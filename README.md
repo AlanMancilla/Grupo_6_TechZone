@@ -1,4 +1,4 @@
-# Titulo Grupo_6_TechZone
+#  Grupo_6_TechZone
 
 ## Descipcion 
   PRESENTACION GRUPO 6
