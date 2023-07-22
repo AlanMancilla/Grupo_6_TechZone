@@ -3,10 +3,10 @@ const app = express();
 
 const path = require('path')
 
-app.use(express.static(path.resolve(__dirname,'./views')));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '/.views/index.html'))
+    res.sendFile(path.resolve(__dirname, './views/index.html'))
 })
 
 

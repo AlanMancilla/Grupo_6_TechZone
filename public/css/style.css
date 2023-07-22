@@ -1,0 +1,79 @@
+/*Estilos globales*/
+* {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #999;
+}
+
+h2,
+h3 {
+   font-size: 24px;
+   color: var(--gris-oscuro);
+}
+
+p {
+   font-size: 12px;
+}
+
+li{
+   list-style: none;
+}
+
+/* header */
+header .contact{
+   background-color: #555;
+   text-align: right;
+}
+
+.header-top{
+   display: flex;
+   justify-content: space-evenly;
+}
+
+
+
+.header-nav{
+   display: flex;
+   justify-content: space-evenly;
+}
+
+
+/* main */
+.carrusel{
+   width: 100%;
+   height: 400px;
+   background-color: tomato;
+   margin: 10px 0;
+}
+
+.productos{
+   margin: 10px 0;
+   width: 100%;
+   height: 400px;
+   background-color: tomato;
+}
+
+
+/* footer */
+
+.terms{
+   display: flex;
+   justify-content: space-around;
+}
+
+.contact{
+   background-color: #333;
+   
+}
+
+.contact h3{
+   color: green;
+}
+.contact p{
+   color: #FFF;
+}
