@@ -38,8 +38,7 @@ header .contact{
 
 
 .header-nav{
-   display: flex;
-   justify-content: space-evenly;
+   display: none;
 }
 
 
@@ -76,4 +75,16 @@ header .contact{
 }
 .contact p{
    color: #FFF;
+}
+
+@media (min-width:770px){
+
+   .header-nav{
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+   }
+   .header-top i{
+      display: none;
+   }
 }
