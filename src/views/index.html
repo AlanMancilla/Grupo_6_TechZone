@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="/css/style.css">
 
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,51 +19,118 @@
             <a href="#">contact</a>
         </div>
         <div class="header-top">
-            <i class="fa-solid fa-bars"></i>
+            <span class="burger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </span>
 
             <img class="logo" src="" alt="Logo TechZone"></img>
 
-            <input type="text">
+            <span class="search-group">
+                <input class="search" type="text">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
 
-            <a href="/login">
-                <div>
-                    login
+            <div>
+                <span class="login-icon">
+                    <i class="fa-solid fa-address-card"></i>
+                </span>
+                <div class="login-register">
+                    <a href="/login">
+                        <span>
+                            login
+                        </span>
+                    </a>/
+                    <a href="#">
+                        <span>
+                            register
+                        </span>
+                    </a>
                 </div>
-            </a><a href="#">
-                <div>
-                    register
-                </div>
-            </a><a href="#">
-                <div>
+            </div>
+
+            <a href="#">
+                <span class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <div class="cart">
                     carrito
                 </div>
             </a>
         </div>
 
-        <nav >
+
+        <nav>
             <ul class="header-nav">
-                <li>Categorias</li>
-                <li>PCs de Escritorio</li>
-                <li>Notebooks</li>
-                <li>Placas de Video</li>
-                <li>Monitores</li>
-                <li>Micros</li>
-                <li>¡Imperdibles!</li>
-                <li>|Armá tu PC|</li>
+                <li><span>Categorias</span></li>
+                <li><span>PCs de Escritorio</span></li>
+                <li><span>Notebooks</span></li>
+                <li><span>Placas de Video</span></li>
+                <li><span>Monitores</span></li>
+                <li><span>Micros</span></li>
+                <li><span>¡Imperdibles!</span></li>
+                <li><span>|Armá tu PC|</span></li>
             </ul>
         </nav>
 
     </header>
-    
+
     <main>
         <div class="carrusel">
             carrusel
         </div>
 
-        <div class="productos">
-            productos
+        <h2>Productos</h2>
+        <section class="productos">
 
-        </div>
+            <article>
+                <div class="image-container">
+                    <a href="">
+                        <img src="/img/laptop.jpg" alt="Imagen">
+                    </a>
+                </div>
+                <div class="article-description-content">
+                    <div class="precio">$450000</div>
+                    <span class="descuento">10% OFF</span>
+                    <div class="descripciones">Notebook XPG Xenia 14 i5 1135G7 Iris</div>
+                </div>
+            </article>
+            <article>
+                <div class="image-container">
+                    <a href="">
+                        <img src="/img/laptop.jpg" alt="Imagen">
+                    </a>
+                </div>
+                <div class="article-description-content">
+                    <div class="precio">$450000</div>
+                    <span class="descuento">10% OFF</span>
+                    <div class="descripciones">Notebook XPG Xenia 14 i5 1135G7 Iris</div>
+                </div>
+            </article>
+            <article>
+                <div class="image-container">
+                    <a href="">
+                        <img src="/img/laptop.jpg" alt="Imagen">
+                    </a>
+                </div>
+                <div class="article-description-content">
+                    <div class="precio">$450000</div>
+                    <span class="descuento">10% OFF</span>
+                    <div class="descripciones">Notebook XPG Xenia 14 i5 1135G7 Iris</div>
+                </div>
+            </article>
+            <article>
+                <div class="image-container">
+                    <a href="">
+                        <img src="/img/laptop.jpg" alt="Imagen">
+                    </a>
+                </div>
+                <div class="article-description-content">
+                    <div class="precio">$450000</div>
+                    <span class="descuento">10% OFF</span>
+                    <div class="descripciones">Notebook XPG Xenia 14 i5 1135G7 Iris</div>
+                </div>
+            </article>
+        </section>
 
     </main>
 
@@ -74,19 +143,30 @@
             <li>promociones y sorteos</li>
         </ul>
 
-        <div class="contact">
-            <h3>Atencion al Cliente</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, incidunt?</p>
-            <h3>TechZone lugar</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, cum.</p>
-            <h3>se el primero en enterarte</h3>
-            <p>suscribite y recibi las mejores ofertas</p>
-            <input type="email">
-            <a href="#">redes</a>
-            <a href="#">redes</a>
-            <a href="#">redes</a>
+        <div class="footer-contact">
+            <div>
+                <h4>Atencion al Cliente</h4>
+                <p>0888-555-8888</p>
+                <p>consultas@TechZone.com.ar</p>
+                <p>WhatsApp +54 11 9999-9999</p>
+                <p>Lunes a viernes de 8 a 18hs.</p>
+            </div>
+            <div>
+                <h4>TechZone lugar</h4>
+                <p>Jujuy: Lunes a Viernes de 10 a 17h.</p>
+                <p>Córdoba: Lunes a Viernes de 10 a 17h.</p>
+            </div>
+            <div>
+                <h4>se el primero en enterarte</h4>
+                <p>suscribite y recibi las mejores ofertas</p>
+                <input type="email">
+                <a href="#">redes</a>
+                <a href="#">redes</a>
+                <a href="#">redes</a>
+            </div>
         </div>
 
     </footer>
 </body>
+
 </html>
