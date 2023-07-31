@@ -16,7 +16,7 @@ Nuestro equipo de **profesionales** capacitados y amables está listo para brind
 - Sajama Ernesto Alvaro: Soy un estudiante universitario de 22 años, apasionado por los videojuegos. :beaver:
 - Amador Nicolás Nestor David: Tengo 24 años, soy estudiante de laboratorio y tengo una forrajeria, me gusta todo lo que tenga que ver con computadoras. :shipit:
 - Mancilla Torres Alan Daniel: Tengo 23 años, estudio un profesorado y me gusta jugar videojuegos.
-- Chorolque Angelo Matias: Tengo 22 años, soy estudiante de programación, juego tennis, me gustan mucho las computadoras y el hardware en general
+- Chorolque Angelo Matias: Tengo 22 años, soy estudiante de programación, juego tennis, me gusta la moda, me gustan mucho las computadoras y el hardware en general
   
 ### Grupo 
 - Sajama Ernesto Alvaro
