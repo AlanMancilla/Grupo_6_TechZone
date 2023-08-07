@@ -14,5 +14,8 @@ app.get('/login', (req, res) => {
 app.get('/productDetail', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
 })
+app.get('/productCart', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/productCart.html'))
+})
 
 app.listen('3000', (req, res) => console.log('En linea'));
