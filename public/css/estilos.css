@@ -15,8 +15,8 @@ html{
 
 body{
     font-family: var(--fuente);
-    background-color: var(--azulOscuro);
-    display: flex;
+    background-image:url("../img/pexels-felix-mittermeier-956999.jpg");
+    display: flex; 
     align-items: center;
     height: 100vh;
 }
@@ -69,6 +69,7 @@ body{
 .formulario{
     padding: 50px;
     background-color: var(--azul);
+    border-radius: 0px 1em 1em 0px
 }
 .texto-formulario h2, .input label, .password-olvidada a, .texto-formulario p{
     color: var(--blanco);
