@@ -3,22 +3,25 @@ const app = express();
 
 const path = require('path')
 
+const mainRouter = require('../src/routers/mainRouter.js');
+const loginRouter = require('./routers/loginRouter.js');
+const regsiterRouter = require('./routers/registerRouter.js');
+const productCartRouter = require('../src/routers/productCartRouter.js');
+const productDetailRouter = require('../src/routers/productDetailRouter.js');
+
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'))
-})
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'))
-})
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
-})
-app.get('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html'))
-})
-app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/register.html'))
-})
+app.set('view engine', 'ejs');
+app.set('views', 'src/views');
 
-app.listen('3000', (req, res) => console.log('En linea'));
+app.use('/', mainRouter);
+app.use('/login', loginRouter);
+app.use('/register', regsiterRouter);
+app.use('/productDetail', productDetailRouter);
+app.use('/productCart', productCartRouter);
+
+const port = process.env.PORT || 3001;
+
+app.listen(port, () =>
+    console.log(`Servidor corriendo en el puerto http://localhost:${port}`)
+);
