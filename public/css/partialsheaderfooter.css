@@ -1,5 +1,39 @@
+/*Estilos globales*/
+.header-footer {
+    box-sizing: border-box;
+}
+
+.header-footer h2,
+.header-footer h3 {
+    font-size: 40px;
+    color: var(--gris-oscuro);
+}
+
+.header-footer h4 {
+    font-size: 28px;
+    color: green;
+}
+
+.header-footer p {
+    font-size: 20px;
+}
+
+.header-footer ul {
+    margin: 0;
+}
+
+.header-footer li {
+    list-style: none;
+}
+
+.header-footer a {
+    color: #FFF;
+}
+
+
 /* header */
-/* .contact {
+
+.contact {
     background-color: #2D2D33;
     text-align: right;
     height: 25px;
@@ -19,8 +53,8 @@
 }
 
 .logo {
-    width: 14%;
-    height: 4vw;
+    width: 14vw;
+    height: 4vh;
 }
 
 .search-group {
@@ -81,6 +115,28 @@
     padding: 15px;
 }
 
+/* footer */
+.terms {
+    display: none;
+}
+
+.terms li {
+    padding: 10px;
+}
+
+.footer-contact {
+    padding: 0 10px;
+    background-color: #37373f;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.footer-contact p {
+    color: #FFF;
+}
+
 @media (min-width:770px) {
 
     .logo {
@@ -114,4 +170,19 @@
     .cart {
         display: inline;
     }
-} */
+
+    /* footer */
+
+    .terms {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer-contact {
+        flex-wrap: wrap;
+    }
+
+    .footer-contact div {
+        width: 30vw;
+    }
+}
