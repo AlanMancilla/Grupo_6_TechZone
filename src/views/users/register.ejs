@@ -5,16 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formulario CSS</title>
+    <title>Register</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="stylesheet" href="css/partialsheaderfooter.css">
+    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <%- include('../partials/header') %>
+
     <section class="body-login">
     
     <div class="contenedor-formulario contenedor">
@@ -49,6 +54,7 @@
     </div>
 </section>
 
+<%- include('../partials/footer') %>
 </body>
 
 </html>
