@@ -33,7 +33,12 @@ li {
    list-style: none;
 }
 
-a {
+a{
+   color: #343636;
+   text-decoration: none;
+}
+
+.header-footer a {
    color: #FFF;
 }
 
@@ -99,7 +104,7 @@ a {
 }
 
 
-.productos {
+.products {
    margin: 10px auto;
    width: 95vw;
    background-color: #999;
@@ -109,7 +114,7 @@ a {
 
 }
 
-.productos article {
+.products article {
    width: 20vw;
    min-width: 135px;
    background-color: #FFF;
@@ -123,7 +128,7 @@ a {
    margin: auto;
 }
 
-.productos article img {
+.products article img {
    width: 100%;
    background-color: #343636;
 }

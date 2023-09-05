@@ -35,7 +35,7 @@
         </section>
 
         <h2>Productos</h2>
-        <section class="productos">
+        <section class="products">
 
             <article>
                 <div class="image-container">
@@ -85,6 +85,23 @@
                     <div class="descripciones">Notebook XPG Xenia 14 i5 1135G7 Iris</div>
                 </div>
             </article>
+        </section>
+
+        <section class="products">
+            <% products.forEach(product => { %>
+                <a href="/productDetail/<%= product.id %>">
+                    <article>
+                        <figure class="image-container">
+                            <img src="/img/products/<%= product.image %>" alt="imagen de producto">
+                        </figure>
+                        <div>
+                            <div class="precio"> $<%= product.price %> </div>
+                            <span class="descuento"><%= product.discount %> % OFF</span>
+                            <p class="descripciones"><%= product.name %></p>
+                        <div/>
+                    </article>
+                </a>
+            <% }) %>
         </section>
 
     </main>
