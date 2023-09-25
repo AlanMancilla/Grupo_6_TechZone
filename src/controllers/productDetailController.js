@@ -8,7 +8,15 @@ const productDetailControllers = {
         res.render('products/productDetail.ejs')
     },
     productCreate : (req, res) => {
-        res.render('index.ejs')
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+		const id = 1;
+
+		const productToSend = products.find(product => {
+			return product.id == id
+		})
+		
+		res.render('products/productDetail.ejs', {product: productToSend})
     },
     productDetail: (req, res) => {
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -21,11 +29,20 @@ const productDetailControllers = {
 		
 		res.render('products/productDetail.ejs', {product: productToSend})
 	},
-    productCreatePOST : (req, res) => {
+    productCreatePost : (req, res) => {
+        console.log("createPost")
         res.render('index.ejs')
     },
     productEdit : (req, res) => {
-        res.render('index.ejs')
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+		const id = req.params.id;
+
+		const productToSend = products.find(product => {
+			return product.id == id
+		})
+		
+		res.render('products/productEdit.ejs', {product: productToSend})
     },
     productEditPUT : (req, res) => {
         res.render('index.ejs')
