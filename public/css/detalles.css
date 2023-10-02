@@ -50,6 +50,7 @@ img {
     position: relative;
     color: #12263a;
     margin: 1rem 0;
+    width: 100%;
 }
 
 .product-title::after {
@@ -94,6 +95,7 @@ img {
     font-size: 33px;
     line-height: 32px;
     padding-top: 4px;
+    width: 100%;
 }
 
 .product-price span {
@@ -110,6 +112,7 @@ img {
     font-size: 0.9rem;
     padding: 0.3rem;
     opacity: 0.8;
+    width: 100%;
 }
 
 .product-detail ul {
@@ -129,6 +132,13 @@ img {
 
 .product-detail ul li span {
     font-weight: 400;
+}
+
+.input-text{
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    width: inherit;
 }
 
 .purchase-info {

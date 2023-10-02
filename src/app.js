@@ -3,6 +3,9 @@ const app = express();
 
 const path = require('path')
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const mainRouter = require('../src/routers/mainRouter.js');
 const loginRouter = require('./routers/loginRouter.js');
 const regsiterRouter = require('./routers/registerRouter.js');
