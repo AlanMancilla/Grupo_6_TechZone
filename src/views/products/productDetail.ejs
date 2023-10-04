@@ -22,23 +22,23 @@
             <div class="product-img">
                 <div class="img-display">
                     <div class="img-showcase">
-                        <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
+                        <img src="/img/products/<%= product.image || 'img1.jpg' %>" alt="<%= product.name || '404' %>">
                     </div>
                 </div>
 
             </div>
             <div class="product-content">
-                <h2 class="product-title"><%= product.name %></h2>
+                <h2 class="product-title"><%= product.name || '404' %></h2>
                 <a href="#" class="product-link">Nashe</a>
                 <div class="product-price">
-                    <p class="product-price">Precio: <span><%= product.price %> </span></p>
+                    <p class="product-price">Precio: <span><%= product.price || '404'%> </span></p>
                 </div>
                 <div class="product-detail">
                     <h2>Descripcion</h2>
-                    <p> <%= product.description %></p>
+                    <p> <%= product.description || '404' %></p>
                     <ul>
                         <li>Disponible: <span>En stock</span></li>
-                        <li>Categoria: <span> <%= product.category %></span></li>
+                        <li>Categoria: <span> <%= product.category || '404' %></span></li>
                         <li>Area de entrega: <span>Todo el país</span></li>
                         <li>Costo de envio: <span>Gratis</span></li>
                     </ul>
@@ -67,7 +67,13 @@
                     Añadir al carrito <i class="fa fa-shopping-cart"></i>
                 </button>
                 <button type="button" class="btn">Comprar</button>
+                <% if (product) { %>
+                    <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn">borrar</button>
+                    </form>
+                <% } %>
             </div>
+
 
             <div class="social-links">
                 <p>Compartir en:</p>
