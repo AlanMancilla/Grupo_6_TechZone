@@ -133,14 +133,5 @@
       "image": "auricular_Hyperx.jpg",
       "price": 94990,
       "discount": 25
-   },
-   {
-      "name": "nashe",
-      "price": "10000000000000000000000000000000000000000",
-      "discount": "1",
-      "description": "nashe",
-      "category": "Periféricos",
-      "id": 17,
-      "image": "image-create1696253741233.jpg"
    }
 ]
