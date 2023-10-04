@@ -27,7 +27,8 @@ const productDetailControllers = {
         console.log('createPOST')
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        req.body.id = products.length + 1;
+        let new_id = products[products.length - 1].id + 1;
+        req.body.id = new_id;
 
         let newProduct = req.body;
         newProduct.image = req.file.filename;
@@ -40,7 +41,7 @@ const productDetailControllers = {
             } else {
                 console.log('Archivo sobrescrito exitosamente.');
             }
-        })
+        });
 
         res.render('products/productDetail.ejs', { product: newProduct });
 
@@ -85,7 +86,22 @@ const productDetailControllers = {
 
     },
     productDELETE: (req, res) => {
-        res.render('index.ejs')
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const id = req.params.id;
+
+        products = products.filter((product) => {
+            return product.id != id;
+        });
+
+        fs.writeFile(productsFilePath, JSON.stringify(products), 'utf-8', (err) => {
+            if (err) {
+                console.error('Error al borrar:', err);
+            } else {
+                console.log('Archivo sobrescrito exitosamente.');
+            }
+        });
+        res.redirect('/')
     },
 }
 
