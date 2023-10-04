@@ -7,8 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const mainRouter = require('../src/routers/mainRouter.js');
-const loginRouter = require('./routers/loginRouter.js');
-const regsiterRouter = require('./routers/registerRouter.js');
+const usersRouter = require('./routers/users.js');
 const productCartRouter = require('../src/routers/productCartRouter.js');
 const productDetailRouter = require('../src/routers/productDetailRouter.js');
 
@@ -18,8 +17,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
 app.use('/', mainRouter);
-app.use('/login', loginRouter);
-app.use('/register', regsiterRouter);
+app.use('/users', usersRouter);
 app.use('/productDetail', productDetailRouter);
 app.use('/productCart', productCartRouter);
 

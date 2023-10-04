@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/estilos.css">
 
-    <link rel="stylesheet" href="css/partialsheaderfooter.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+
+    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
     <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,40 +21,56 @@
     <%- include('../partials/header') %>
 
     <section class="body-login">
-    
-    <div class="contenedor-formulario contenedor">
-        <div class="imagen-formulario">
-            
+
+        <div class="contenedor-formulario contenedor">
+            <div class="imagen-formulario">
+
+            </div>
+
+            <form class="formulario" method="POST" action="/users/Register">
+                <div class="texto-formulario">
+                    <h2>Hola! Registrate aqui.</h2>
+                </div>
+                <div class="input">
+                    <label for="name">Nombre</label>
+                    <input placeholder="Ingresa tu nombre" type="text" name="name" id="name" value="<%= locals.old?.name || '' %>">
+                    <% if (locals && locals.errors) { %>
+                            <p><%= errors.name?.msg %></p>
+                    <% } %>
+                </div>
+                <div class="input">
+                    <label for="last_name">Apellido</label>
+                    <input placeholder="Ingresa tu Apellido" type="text" name="last_name" id="last_name" value="<%= locals.old?.last_name || '' %>">
+                    <% if (locals && locals.errors) { %>
+                        <p><%= errors.last_name?.msg %></p>
+                    <% } %>
+                </div>
+                <div class="input">
+                    <label for="email">Correo Electronico</label>
+                    <input placeholder="Ingresa tu Correo" type="email" name="email" id="email" value="<%= locals.old?.email || '' %>">
+                    <% if (locals && locals.errors) { %>
+                        <p><%= errors.email?.msg %></p>
+                    <% } %>
+                </div>
+                <div class="input">
+                    <label for="password">Contraseña</label>
+                    <input placeholder="Ingresa tu Contraseña" minlength="8" type="password" name="password" id="password" value="<%= locals.old?.password || '' %>">
+                    <% if (locals && locals.errors) { %>
+                        <p><%= errors.password?.msg %></p>
+                    <% } %>
+                </div>
+                <div class="input">
+                    <label for="check_password">Confirme su contraseña</label>
+                    <input placeholder="Ingresa tu Contraseña" type="password" name="check_password" id="check_password">
+                </div>
+                <div class="input">
+                    <input type="submit" value="Registrate">
+                </div>
+            </form>
         </div>
+    </section>
 
-        <form class="formulario">
-            <div class="texto-formulario">
-                <h2>Hola! Registrate aqui.</h2>
-            </div>
-            <div class="input">
-                <label for="usuario">Nombre</label>
-                <input placeholder="Ingresa tu nombre" type="text" id="usuario">
-            </div>
-            <div class="input">
-                <label for="usuario">Apellido</label>
-                <input placeholder="Ingresa tu Apellido" type="text" id="usuario">
-            </div>
-            <div class="input">
-                <label for="contraseña">Correo Electronico</label>
-                <input placeholder="Ingresa tu Correo" type="password" id="contraseña">
-            </div>
-            <div class="input">
-                <label for="usuario">Contraseña</label>
-                <input placeholder="Ingresa tu Contraseña" type="text" id="usuario">
-            </div>
-            <div class="input">
-                <input type="submit" value="Registrate">
-            </div>
-        </form>
-    </div>
-</section>
-
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
 </body>
 
 </html>
