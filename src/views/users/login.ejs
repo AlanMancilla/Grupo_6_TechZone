@@ -34,12 +34,18 @@
                     <p>Inicia sesión con tu cuenta</p>
                 </div>
                 <div class="input">
-                    <label for="usuario">Usuario</label>
-                    <input placeholder="Ingresa tu nombre" type="text" id="usuario">
+                    <label for="email">Correo Electronico</label>
+                    <input placeholder="Ingresa tu Correo" type="email" name="email" id="email" value="<%= locals.old?.email || '' %>">
+                    <% if (locals && locals.errors) { %>
+                        <p><%= errors.email?.msg %></p>
+                    <% } %>
                 </div>
                 <div class="input">
-                    <label for="contraseña">Contraseña</label>
-                    <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
+                    <label for="password">Contraseña</label>
+                    <input placeholder="Ingresa tu Contraseña" minlength="8" type="password" name="password" id="password" value="<%= locals.old?.password || '' %>">
+                    <% if (locals && locals.errors) { %>
+                        <p><%= errors.password?.msg %></p>
+                    <% } %>
                 </div>
                 <div class="password-olvidada">
                     <a href="#">¿Olvidaste tu contraseña?</a>
@@ -49,7 +55,7 @@
                 </div>
                 <div class="texto-imagen">
                     <p>no tenes cuenta?</p>
-                    <a href="/register" class="link">registrate</a>
+                    <a href="/users/register" class="link">registrate</a>
                 </div>
             </form>
         </div>
