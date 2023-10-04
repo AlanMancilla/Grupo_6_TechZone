@@ -1,3 +1,4 @@
+const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 
@@ -56,7 +57,32 @@ const productDetailControllers = {
         res.render('products/productEdit.ejs', { product: productToSend })
     },
     productEditPUT: (req, res) => {
-        res.render('index.ejs')
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const id = req.params.id
+
+        /* const product = products.find((product) => {return product.id == id})
+
+        let product = req.body;
+        product.image = req.file.filename;
+        product.name = req.body.name;
+        product.price = req.body.price;
+        product.description = req.body.description;
+        product.category = req.body.category; */
+
+        products[ id -1 ] = req.body;
+        
+        console.log(req.body)
+
+        fs.writeFile(productsFilePath, JSON.stringify(products), 'utf-8', (err) => {
+            if (err) {
+                console.error('Error al escribir el archivo:', err);
+            } else {
+                console.log('Archivo sobrescrito exitosamente.');
+            }
+        })
+
+        res.render('products/productDetail.ejs', { product: products });
+
     },
     productDELETE: (req, res) => {
         res.render('index.ejs')

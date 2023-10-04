@@ -1,1 +1,154 @@
-[{"id":1,"name":"Notebook XPG Xenia 14 i5 1135G7 Iris","description":"Una potente laptop con procesador i5 1135G7 y gráficos Iris. Perfecta para trabajar y jugar.","category":"Electrónica","image":"laptop.jpg","price":759389,"discount":10},{"id":2,"name":"PLACA DE VIDEO ASUS TUF NVIDIA GEFORCE RTX 4070TI O12GB GAMING","description":"Una tarjeta gráfica de alta gama para juegos.","category":"Hardware","image":"4070_ti.jpg","price":1096889,"discount":20},{"id":3,"name":"PLACA DE VIDEO POWERCOLOR AMD RADEON RX 6700 XT RED DEVIL 12GB","description":"Una tarjeta gráfica Crimson para los amantes de los videojuegos.","category":"Hardware","image":"6700XT.jpg","price":452559,"discount":25},{"id":4,"name":"PLACA DE VIDEO PALIT NVIDIA GEFORCE RTX 3060 TI DUAL 8GB GDDR6 256BIT LHR","description":"Tarjeta gráfica de alto rendimiento para juegos intensivos.","category":"Hardware","image":"3060_ti.jpg","price":455639,"discount":10},{"id":5,"name":"MICROPROCESADOR AMD RYZEN 7 5800X 8/16 4.7GHZ S/G S/COOLER ZEN3","description":"Procesador Ryzen 7 5800X para un rendimiento excepcional en tu computadora.","category":"Hardware","image":"ryzen7_5800x.jpg","price":299990,"discount":20},{"id":6,"name":"MICROPROCESADOR CPU INTEL CORE I5 13600K RAPTORLAKE S1700 13VA","description":"Procesador Intel i5 13600K para una experiencia informática rápida y eficiente.","category":"Hardware","image":"intel_i5_13600k.jpg","price":492429,"discount":25},{"id":7,"name":"MICROPROCESADOR AMD RYZEN 5600G 4.4 GHZ AM4","description":"Procesador Ryzen 5 5600G para juegos y tareas diarias.","category":"Hardware","image":"ryzen5_5600g.jpg","price":156990,"discount":10},{"id":8,"name":"DISCO SOLIDO SSD WD 1TB M2 NVME SN850X BLACK 7300MB/S","description":"Un disco duro de alta velocidad para almacenamiento de datos.","category":"Hardware","image":"M.2_7300.jpg","price":185629,"discount":20},{"id":9,"name":"DISCO SOLIDO SSD 960GB KINGSTON SATA III A400","description":"SSD de 960GB para un rendimiento de almacenamiento más rápido.","category":"Hardware","image":"ssd_960gb.jpg","price":56729,"discount":25},{"id":10,"name":"MEMORIA RAM ADATA 32GB 3600MHZ XPG GAMIXX D45 2X16","description":"Memoria RAM de 16GB para mejorar la velocidad de tu computadora.","category":"Hardware","image":"2ram_16gb.jpg","price":131909,"discount":10},{"id":11,"name":"MEMORIA RAM CORSAIR VENGANCE DDR4 16GB 3200MHZ RGB C16 2X8","description":"Memoria RAM de 8GB para un rendimiento eficiente.","category":"Hardware","image":"2ram_8gb.jpg","price":55209,"discount":20},{"id":12,"name":"TECLADO INALAMBRICO LOGITECH G G915 TKL RGB WHITE MECH","description":"Teclado G915 para una experiencia de escritura de alta calidad.","category":"Periféricos","image":"teclado_g915.jpg","price":137079,"discount":25},{"id":13,"name":"TECLADO HYPERX ALLOY ELITE 2 RGB RED","description":"Teclado HyperX Alloy con iluminación LED y rendimiento excepcional.","category":"Periféricos","image":"teclado_HyperxAlloy.jpg","price":114990,"discount":10},{"id":14,"name":"AURICULAR LOGITECH G PRO GAMING","description":"Auriculares G Pro para una experiencia de audio inmersiva.","category":"Periféricos","image":"auricular_gpro.jpg","price":122709,"discount":20},{"id":15,"name":"AURICULAR HYPERX CLOUD ALPHA ROJO","description":"Auriculares HyperX para un sonido excepcional mientras juegas o escuchas música.","category":"Periféricos","image":"auricular_Hyperx.jpg","price":94990,"discount":25},{"name":"aaaaaaa","price":"123","description":"qerqwe","category":"Periféricos","id":16,"image":"image-create1696182958967.png"},{"name":"nashe","price":"10000000000000000000000000000000000000000","discount":"1","description":"nashe","category":"Periféricos","id":17,"image":"image-create1696253741233.jpg"}]
+[
+    {
+        "id": 1,
+        "name": "Notebook XPG Xenia 14 i5 1135G7 Iris",
+        "description": "Una potente laptop con procesador i5 1135G7 y gráficos Iris. Perfecta para trabajar y jugar.",
+        "category": "Electrónica",
+        "image": "laptop.jpg",
+        "price": 759389,
+        "discount": 10
+    },
+    {
+        "id": 2,
+        "name": "PLACA DE VIDEO ASUS TUF NVIDIA GEFORCE RTX 4070TI O12GB GAMING",
+        "description": "Una tarjeta gráfica de alta gama para juegos.",
+        "category": "Hardware",
+        "image": "4070_ti.jpg",
+        "price": 1096889,
+        "discount": 20
+    },
+    {
+        "id": 3,
+        "name": "PLACA DE VIDEO POWERCOLOR AMD RADEON RX 6700 XT RED DEVIL 12GB",
+        "description": "Una tarjeta gráfica Crimson para los amantes de los videojuegos.",
+        "category": "Hardware",
+        "image": "6700XT.jpg",
+        "price": 452559,
+        "discount": 25
+    },
+    {
+        "id": 4,
+        "name": "PLACA DE VIDEO PALIT NVIDIA GEFORCE RTX 3060 TI DUAL 8GB GDDR6 256BIT LHR",
+        "description": "Tarjeta gráfica de alto rendimiento para juegos intensivos.",
+        "category": "Hardware",
+        "image": "3060_ti.jpg",
+        "price": 455639,
+        "discount": 10
+    },
+    {
+        "id": 5,
+        "name": "MICROPROCESADOR AMD RYZEN 7 5800X 8/16 4.7GHZ S/G S/COOLER ZEN3",
+        "description": "Procesador Ryzen 7 5800X para un rendimiento excepcional en tu computadora.",
+        "category": "Hardware",
+        "image": "ryzen7_5800x.jpg",
+        "price": 299990,
+        "discount": 20
+    },
+    {
+        "id": 6,
+        "name": "MICROPROCESADOR CPU INTEL CORE I5 13600K RAPTORLAKE S1700 13VA",
+        "description": "Procesador Intel i5 13600K para una experiencia informática rápida y eficiente.",
+        "category": "Hardware",
+        "image": "intel_i5_13600k.jpg",
+        "price": 492429,
+        "discount": 25
+    },
+    {
+        "id": 7,
+        "name": "MICROPROCESADOR AMD RYZEN 5600G 4.4 GHZ AM4",
+        "description": "Procesador Ryzen 5 5600G para juegos y tareas diarias.",
+        "category": "Hardware",
+        "image": "ryzen5_5600g.jpg",
+        "price": 156990,
+        "discount": 10
+    },
+    {
+        "id": 8,
+        "name": "DISCO SOLIDO SSD WD 1TB M2 NVME SN850X BLACK 7300MB/S",
+        "description": "Un disco duro de alta velocidad para almacenamiento de datos.",
+        "category": "Hardware",
+        "image": "M.2_7300.jpg",
+        "price": 185629,
+        "discount": 20
+    },
+    {
+        "id": 9,
+        "name": "DISCO SOLIDO SSD 960GB KINGSTON SATA III A400",
+        "description": "SSD de 960GB para un rendimiento de almacenamiento más rápido.",
+        "category": "Hardware",
+        "image": "ssd_960gb.jpg",
+        "price": 56729,
+        "discount": 25
+    },
+    {
+        "id": 10,
+        "name": "MEMORIA RAM ADATA 32GB 3600MHZ XPG GAMIXX D45 2X16",
+        "description": "Memoria RAM de 16GB para mejorar la velocidad de tu computadora.",
+        "category": "Hardware",
+        "image": "2ram_16gb.jpg",
+        "price": 131909,
+        "discount": 10
+    },
+    {
+        "id": 11,
+        "name": "MEMORIA RAM CORSAIR VENGANCE DDR4 16GB 3200MHZ RGB C16 2X8",
+        "description": "Memoria RAM de 8GB para un rendimiento eficiente.",
+        "category": "Hardware",
+        "image": "2ram_8gb.jpg",
+        "price": 55209,
+        "discount": 20
+    },
+    {
+        "id": 12,
+        "name": "TECLADO INALAMBRICO LOGITECH G G915 TKL RGB WHITE MECH",
+        "description": "Teclado G915 para una experiencia de escritura de alta calidad.",
+        "category": "Periféricos",
+        "image": "teclado_g915.jpg",
+        "price": 137079,
+        "discount": 25
+    },
+    {
+        "id": 13,
+        "name": "TECLADO HYPERX ALLOY ELITE 2 RGB RED",
+        "description": "Teclado HyperX Alloy con iluminación LED y rendimiento excepcional.",
+        "category": "Periféricos",
+        "image": "teclado_HyperxAlloy.jpg",
+        "price": 114990,
+        "discount": 10
+    },
+    {
+        "id": 14,
+        "name": "AURICULAR LOGITECH G PRO GAMING",
+        "description": "Auriculares G Pro para una experiencia de audio inmersiva.",
+        "category": "Periféricos",
+        "image": "auricular_gpro.jpg",
+        "price": 122709,
+        "discount": 20
+    },
+    {
+        "id": 15,
+        "name": "AURICULAR HYPERX CLOUD ALPHA ROJO",
+        "description": "Auriculares HyperX para un sonido excepcional mientras juegas o escuchas música.",
+        "category": "Periféricos",
+        "image": "auricular_Hyperx.jpg",
+        "price": 94990,
+        "discount": 25
+    },
+    {
+        "name": "aaaaaaa",
+        "price": "123",
+        "description": "qerqwe",
+        "category": "Periféricos",
+        "id": 16,
+        "image": "image-create1696182958967.png"
+    },
+    {
+        "name": "nashe",
+        "price": "10000000000000000000000000000000000000000",
+        "discount": "1",
+        "description": "nashe",
+        "category": "Periféricos",
+        "id": 17,
+        "image": "image-create1696253741233.jpg"
+    }
+]
