@@ -1,4 +1,3 @@
-const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 
@@ -6,7 +5,8 @@ const productsFilePath = path.join(__dirname, '../database/products.json');
 
 const productDetailControllers = {
     productList: (req, res) => {
-        res.render('products/productDetail.ejs')
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        res.render('products/list', {products: products})
     },
     productCreate: (req, res) => {
         res.render('products/productcreate.ejs')
@@ -24,7 +24,6 @@ const productDetailControllers = {
     },
     productCreatePost: (req, res) => {
 
-        console.log('createPOST')
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         let new_id = products[products.length - 1].id + 1;

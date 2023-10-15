@@ -15,30 +15,31 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </span>
 
-        <div>
-            <a href="/users/login">
-                <span class="login-icon">
-                    <i class="fa-solid fa-address-card"></i>
-                </span>
-            </a>
-            <div class="login-register">
-                <a href="/users/login">
-                    <span>
-                        login
-                    </span>
-                    /
-                </a>
-                <a href="/users/register">
-                    <span>
-                        register
-                    </span>
-                </a>
-            </div>
-            <a href="/productCart">
+        <div class="log-cart">
+            <% if (locals.isLogged) { %>
+                <div class="log-dropdown">
+                    <span class="login-icon"><i class="fa-solid fa-address-card"></i></span>
+                    <span><%= locals.userLogged.firstName %> <%= locals.userLogged.lastName %></span>
+                    <div class="log-dropdown-toggle">
+                        <a href="/users/profile">Mi perfil</a>
+                        <a href="/users/logout">Cerrar Sesion</a>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="login-register">
+                    <a href="/users/login">
+                        <span>login /</span>
+                    </a>
+                    <a href="/users/register">
+                        <span>register</span>
+                    </a>
+                </div>
+            <% } %>
+            <a class="cart" href="/productCart">
                 <span class="cart-icon">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </span>
-                <div class="cart">
+                <div class="cart-text">
                     carrito
                 </div>
             </a>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Lista de usuarios</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/users.css">
+    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
+
+    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <%- include('../partials/header') %>
+
+   <main class="body-login">
+      <section class="contenedor">
+   
+         <% if (users != undefined) { %>
+            <% users.forEach(user => { %>
+               <fieldset>
+                  <legend>
+                     | Nombre Completo: <%= user.lastName %> <%= user.firstName %> |
+                  </legend>
+                  <div>
+                     <img src="/img/users/<%= user.avatar %>" alt="imagen de usuario" class="userImg">
+                     <span><%= user.role %></span>
+                  </div>
+               </fieldset>
+            <% }) %>
+            <ul>
+            </ul>
+         <% } else{ %>
+            <i>No Hay usuarios registrados</i>
+         <% } %>
+   
+      </section>    
+   </main>
+
+
+   <%- include('../partials/footer') %>
+</body>
+
+</html>

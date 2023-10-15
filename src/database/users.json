@@ -1,29 +1,47 @@
 [
    {
       "id": 1,
-      "firstName": "Thadeus",
-      "lastName": "Storks",
-      "email": "tstorks0@unicef.org",
-      "password": "aF3)r?Wh",
-      "type": "Customer",
-      "avatar": "/img/avatars/pretzel.jpg"
+      "firstName": "saul",
+      "lastName": "frank",
+      "email": "saul@tz.com",
+      "password": "$2a$10$0J52evTARHOl7K9GMfH/O.cv./94HvYrXnNTRujFxD.lSYBf9I2PC",
+      "role": "cliente",
+      "avatar": "userDefault.png"
    },
    {
       "id": 2,
-      "firstName": "Antoinette",
-      "lastName": "Clouter",
-      "email": "aclouter1@indiatimes.com",
-      "password": "nS4*KrRVqfhcgZLo",
-      "type": "Customer",
-      "avatar": "/img/avatars/jala.jpg"
+      "firstName": "aaaaaaaaa",
+      "lastName": "aaaaaa",
+      "email": "a@sd.com",
+      "password": "$2a$10$zJ0ZOTKcOpE9W39.MaOHEuCMVZCyyBb6n6mEjz8TRE7YP4JFqxMx.",
+      "role": "cliente",
+      "avatar": "userDefault.png"
    },
    {
       "id": 3,
-      "firstName": "Haydon",
-      "lastName": "Hendriks",
-      "email": "hhendriks2@is.gd",
-      "password": "zE3+f@,pey2",
-      "type": "Customer",
-      "avatar": "/img/avatars/kipa.jpg"
+      "firstName": "qwerqrq",
+      "lastName": "zxcadsq",
+      "email": "a@de.com",
+      "password": "$2a$10$NmmYfYfMrbl8agPsPmP62u93ITZZKMxtEnQeQcvJxzpe4SVGC26FC",
+      "role": "client",
+      "avatar": "userDefault.png"
+   },
+   {
+      "id": 4,
+      "firstName": "asd",
+      "lastName": "qwe",
+      "email": "asd@asd.com",
+      "password": "$2a$10$etN4HhM4eQRLCFS8EpiIROBiijSx6UNxMN7DLErm440wquCAmi.BO",
+      "role": "client",
+      "avatar": "userDefault.png"
+   },
+   {
+      "id": 5,
+      "firstName": "asd",
+      "lastName": "qwe",
+      "email": "a@as.com",
+      "password": "$2a$10$3wEOFzt2nc38h3Owcz9hj.RVRBVoS3fqN0lCAalbtiRCoJ8BqK5q2",
+      "role": "client",
+      "avatar": "userDefault.png"
    }
 ]

@@ -10,6 +10,10 @@ body {
     line-height: 1.5;
 }
 
+textarea{
+    resize: vertical;
+}
+
 .fa-shopping-cart {
     background-color: #256eff;
 }
@@ -225,5 +229,39 @@ img {
 
     .product-content {
         padding-top: 0;
+    }
+}
+
+.list{
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    color: #070707;
+    margin: auto;
+    & .list-product{
+        color: #070707;
+        text-decoration: none;
+        & article{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            & .list-image-container{
+                width: 10vw;
+                & .list-img{
+                    width: 10vw;
+                }
+            }
+            & span{
+                width: 50%;
+            }
+            & div{
+                width: 10%;
+            }
+        }
+        &:hover{
+            background-color: #c7c7c7;
+        }
     }
 }

@@ -1,11 +1,23 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
-const path = require('path')
+const path = require('path');
+const session = require('express-session');
+const cookies = require('cookie-parser')
+
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(session({
+    secret: 'Tz tu tienda de confianza',
+    resave: false,
+    saveUninitialized: true,
+}));
+app.use(cookies());
+app.use(userLoggedMiddleware);
+
 
 const mainRouter = require('../src/routers/mainRouter.js');
 const usersRouter = require('./routers/users.js');
