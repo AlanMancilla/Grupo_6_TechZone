@@ -131,3 +131,9 @@ html{
 a {
     color: var(--blanco);
 }
+
+.msg_error{
+    margin: 0;
+    padding: 7px;
+    color: red;
+}

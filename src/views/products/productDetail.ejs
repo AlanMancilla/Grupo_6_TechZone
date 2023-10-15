@@ -34,9 +34,8 @@
                     </h2>
                     <a href="#" class="product-link">Nashe</a>
                     <div class="product-price">
-                        <p class="product-price">Precio: <span>
-                                <%= product.price || '404' %>
-                            </span></p>
+                        <p class="product-price">Precio: <span><%= product.price || '404' %></span></p>
+                        <p>Descuento: <%= product.discount %>%</p>
                     </div>
                     <div class="product-detail">
                         <h2>Descripcion</h2>

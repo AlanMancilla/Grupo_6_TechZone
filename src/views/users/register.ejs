@@ -37,28 +37,28 @@
                     <label for="name">Nombre</label>
                     <input placeholder="Ingresa tu nombre" type="text" name="name" id="name" value="<%= locals.old?.name || '' %>">
                     <% if (locals && locals.errors) { %>
-                            <p><%= errors.name?.msg %></p>
+                            <p class="msg_error"><%= errors.name?.msg %></p>
                     <% } %>
                 </div>
                 <div class="input">
                     <label for="last_name">Apellido</label>
                     <input placeholder="Ingresa tu Apellido" type="text" name="last_name" id="last_name" value="<%= locals.old?.last_name || '' %>">
                     <% if (locals && locals.errors) { %>
-                        <p><%= errors.last_name?.msg %></p>
+                        <p class="msg_error"><%= errors.last_name?.msg %></p>
                     <% } %>
                 </div>
                 <div class="input">
                     <label for="email">Correo Electronico</label>
                     <input placeholder="Ingresa tu Correo" type="email" name="email" id="email" value="<%= locals.old?.email || '' %>">
                     <% if (locals && locals.errors) { %>
-                        <p><%= errors.email?.msg %></p>
+                        <p class="msg_error"><%= errors.email?.msg %></p>
                     <% } %>
                 </div>
                 <div class="input">
                     <label for="password">Contraseña</label>
                     <input placeholder="Ingresa tu Contraseña" minlength="8" type="password" name="password" id="password" value="<%= locals.old?.password || '' %>">
                     <% if (locals && locals.errors) { %>
-                        <p><%= errors.password?.msg %></p>
+                        <p class="msg_error"><%= errors.password?.msg %></p>
                     <% } %>
                 </div>
                 <div class="input">

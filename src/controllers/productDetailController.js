@@ -53,6 +53,7 @@ const productDetailControllers = {
         const productToSend = products.find(product => {
             return product.id == id
         })
+        console.log(productToSend)//
 
         res.render('products/productEdit.ejs', { product: productToSend })
     },
@@ -63,14 +64,22 @@ const productDetailControllers = {
         /* const product = products.find((product) => {return product.id == id})
 
         let product = req.body;
-        product.image = req.file.filename;
-        product.name = req.body.name;
-        product.price = req.body.price;
-        product.description = req.body.description;
-        product.category = req.body.category; */
+        product.image = req.file.filename; */
+        let productEdit = req.body;
+        productEdit.id = Number(id);
+        productEdit.price = Number(productEdit.price);
+        productEdit.discount = Number(productEdit.discount);
 
-        products[ id -1 ] = req.body;
-        
+        if( !req.file ){
+            productEdit.image = req.body.image_edit;
+            delete productEdit.image_edit
+        } else {
+            productEdit.image = req.file.filename;
+        }
+
+        products[ id - 1 ] = productEdit;
+
+        console.log(req.file)
         console.log(req.body)
 
         fs.writeFile(productsFilePath, JSON.stringify(products), 'utf-8', (err) => {
@@ -81,7 +90,7 @@ const productDetailControllers = {
             }
         })
 
-        res.render('products/productDetail.ejs', { product: products });
+        res.render('products/productDetail.ejs', { product: productEdit });
 
     },
     productDELETE: (req, res) => {
