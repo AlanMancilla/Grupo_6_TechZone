@@ -63,28 +63,28 @@
                         <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
                             <button type="submit" class="btn">borrar</button>
                         </form>
-                        <% } %>
-                            <% if (product) { %>
-                                <form action="/productDetail/<%= product.id %>/edit" method="get">
-                                    <button type="submit" class="btn">Editar</button>
-                                </form>
-                                <% } %>
+                    <% } %>
+                    <% if (product) { %>
+                        <form action="/productDetail/<%= product.id %>/edit" method="get">
+                            <button type="submit" class="btn">Editar</button>
+                        </form>
+                    <% } %>
 
-                                    <div class="social-links">
-                                        <p>Compartir en:</p>
-                                        <a href="#">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fab fa-whatsapp"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </div>
+                    <div class="social-links">
+                        <p>Compartir en:</p>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
 
         </main>

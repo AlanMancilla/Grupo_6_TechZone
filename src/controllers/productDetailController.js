@@ -53,7 +53,6 @@ const productDetailControllers = {
         const productToSend = products.find(product => {
             return product.id == id
         })
-        console.log(productToSend)//
 
         res.render('products/productEdit.ejs', { product: productToSend })
     },

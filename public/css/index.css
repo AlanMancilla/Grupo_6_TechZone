@@ -58,7 +58,7 @@ a{
    aspect-ratio: 192/53;
    width: 100%;
    position: relative;
-   overflow: scroll;
+   overflow: scroll hidden;
    scroll-snap-type: x mandatory;
    
    /* display: flex;
@@ -80,8 +80,9 @@ a{
 .slider img {
 
    width: 100%;
-   left: 0;
-   position: sticky;
+   min-width: 100%;
+   left: 0;/* 
+   position: sticky; */
    object-fit: cover;
    scroll-snap-align: center ;
 
