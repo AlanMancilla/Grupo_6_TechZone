@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,6 @@
             <div class="slider-wrapper">
                 <div class="slider">
                     <img id="slide-1" src="../img/banner.png" />
-                    <img id="slide-2" src="L" />
                     <img id="slide-3"
                         src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
                         alt="3D rendering of an imaginary blue planet in space" />
@@ -41,7 +40,7 @@
                 <a href="/productDetail/<%= product.id %>">
                     <article>
                         <figure class="image-container">
-                            <img src="/img/products/<%= product.image %>" alt="imagen de producto">
+                            <img src="/img/products/<%= product.image %>" alt="imagen de producto" loading="lazy">
                         </figure>
                         <div>
                             <div class="precio"> $<%= product.price %> </div>

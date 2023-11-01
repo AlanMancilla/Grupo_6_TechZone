@@ -26,7 +26,7 @@ router.post('/create', upload.single('image') ,productControllers.productCreateP
 
 router.get('/:id/edit', productControllers.productEdit);
 
-router.put('/:id', productControllers.productEditPUT);
+router.put('/:id', upload.single('image') ,productControllers.productEditPUT);
 
 router.delete('/:id', productControllers.productDELETE);
 

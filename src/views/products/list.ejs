@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Zone</title>
+
+    <link rel="stylesheet" href="/css/detalles.css">
+    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+
+        <h2>Productos</h2>
+        <a href="/productDetail/create">
+        
+            <div class="cart">
+                Create
+            </div>
+        </a>
+
+        <section class="list">
+            <% products.forEach(product => { %>
+                <a class="list-product" href="/productDetail/<%= product.id %>">
+                    <article>
+                        <figure class="list-image-container">
+                            <img class="list-img" src="/img/products/<%= product.image %>" alt="imagen de producto" loading="lazy"></img>
+                        </figure>
+                        <span>
+                           <div class="precio"> $<%= product.price %> </div>
+                           <% if (product.discount && product.discount > 0) { %>
+                              <span class="descuento"><%= product.discount %> % OFF</span>
+                           <% } %>
+                           <p class="descripciones"><%= product.name %></p>
+                        </span>
+                        <form action="/productDetail/<%= product.id %>/edit" method="GET">
+                           <button type="submit" class="btn">Editar</button>
+                        </form>
+                        <details>
+                           <summary>Borrar</summary>
+                           seguro que quiere borrar
+                           <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
+                              <button type="submit" class="btn">Borrar</button>
+                           </form>
+                        </details>
+                    </article>
+                </a>
+            <% }) %>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

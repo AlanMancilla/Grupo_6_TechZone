@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,78 +17,79 @@
 <body>
     <%- include('../partials/header') %>
 
-    <main class="card-wrapper">
-        <div class="card">
-            <div class="product-img">
-                <div class="img-display">
-                    <div class="img-showcase">
-                        <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
+        <main class="card-wrapper">
+            <div class="card">
+                <div class="product-img">
+                    <div class="img-display">
+                        <div class="img-showcase">
+                            <img src="/img/products/<%= product.image || 'img1.jpg' %>"
+                                alt="<%= product.name || '404' %>">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">
+                        <%= product.name || '404' %>
+                    </h2>
+                    <a href="#" class="product-link">Nashe</a>
+                    <div class="product-price">
+                        <p class="product-price">Precio: <span><%= product.price || '404' %></span></p>
+                        <p>Descuento: <%= product.discount %>%</p>
+                    </div>
+                    <div class="product-detail">
+                        <h2>Descripcion</h2>
+                        <p>
+                            <%= product.description || '404' %>
+                        </p>
+                        <ul>
+                            <li>Disponible: <span>En stock</span></li>
+                            <li>Categoria: <span>
+                                    <%= product.category || '404' %>
+                                </span></li>
+                            <li>Area de entrega: <span>Todo el país</span></li>
+                            <li>Costo de envio: <span>Gratis</span></li>
+                        </ul>
                     </div>
                 </div>
 
-            </div>
-            <div class="product-content">
-                <h2 class="product-title"><%= product.name %></h2>
-                <a href="#" class="product-link">Nashe</a>
-                <div class="product-price">
-                    <p class="product-price">Precio: <span><%= product.price %> </span></p>
+                <div class="purchase-info">
+                    <input type="number" min="0" value="1">
+                    <button type="button" class="btn">
+                        Añadir al carrito <i class="fa fa-shopping-cart"></i>
+                    </button>
+                    <button type="button" class="btn">Comprar</button>
+                    <% if (product) { %>
+                        <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn">borrar</button>
+                        </form>
+                        <% } %>
+                            <% if (product) { %>
+                                <form action="/productDetail/<%= product.id %>/edit" method="get">
+                                    <button type="submit" class="btn">Editar</button>
+                                </form>
+                                <% } %>
+
+                                    <div class="social-links">
+                                        <p>Compartir en:</p>
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
                 </div>
-                <div class="product-detail">
-                    <h2>Descripcion</h2>
-                    <p> <%= product.description %></p>
-                    <ul>
-                        <li>Disponible: <span>En stock</span></li>
-                        <li>Categoria: <span> <%= product.category %></span></li>
-                        <li>Area de entrega: <span>Todo el país</span></li>
-                        <li>Costo de envio: <span>Gratis</span></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- <div class="product-price">
-                <p class="product-price">Precio: <span>$1034532</span></p>
-                <p class="product-price">Precio: <span><%= product.price %> </span></p>
-            </div>
-             <div class="product-detail">
-                <h2>Descripcion</h2>
-                <!-- <p>El armado es realizado por TechZone. Debe contemplar una demora de entrega de 72hr luego de realizar
-                    el pedido y pago de la misma.</p>
-                <p> Incluye mouse y teclado</p>
-                <p> <%= product.description %></p>
-                <ul>
-                    <li>Disponible: <span>En stock</span></li>
-                    <li>Categoria: <span> <%= product.category %></span></li>
-                    <li>Area de entrega: <span>Todo el país</span></li>
-                    <li>Costo de envio: <span>Gratis</span></li>
-                </ul>
-            </div>  -->
-            <div class="purchase-info">
-                <input type="number" min="0" value="1">
-                <button type="button" class="btn">
-                    Añadir al carrito <i class="fa fa-shopping-cart"></i>
-                </button>
-                <button type="button" class="btn">Comprar</button>
-            </div>
 
-            <div class="social-links">
-                <p>Compartir en:</p>
-                <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
+        </main>
 
-    </main>
-
-    <%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>
 
 </body>
 

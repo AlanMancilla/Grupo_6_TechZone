@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles</title>
+    <title>Edición de producto</title>
 
     <link rel="stylesheet" href="/css/detalles.css">
     <link rel="stylesheet" href="/css/partialsheaderfooter.css">
@@ -17,63 +17,80 @@
 <body>
     <%- include('../partials/header') %>
 
-    <main class="card-wrapper">
-        <div class="card">
-            <div class="product-img">
-                <div class="img-display">
-                    <div class="img-showcase">
-                        <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
+        <form method="POST" action="/productDetail/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
+            
+            <main class="card-wrapper">
+                <div class="card">
+                    <div class="product-img">
+                        <div class="img-display">
+                            <label>
+                                <div class="img-showcase">
+                                    <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
+                                </div>
+                                <input id="input-image" type="file" name="image">
+                            </label>
+                            <input style="display: none;" id="image_edit" type="text" name="image_edit" value="<%= product.image %>">
+                        </div>
+
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">
+                            <textarea class="input-text" type="text" id="name" name="name"
+                                required><%= product.name %></textarea>
+                        </h2>
+                        <a href="#" class="product-link">Nashe</a>
+                        <div class="product-price">
+                            <p class="product-price">Precio: <span> <input class="input-text" type="number" id="precio"
+                                        name="price" value="<%= product.price %>"> </span></p>
+                            <p>
+                                Descuento: <input class="input-text" type="number" name="discount" placeholder="descuento. no es necesario" min="0" max="100" value="<%= product.discount %>"> %
+                            </p>
+                        </div>
+                        <div class="product-detail">
+                            <h2>Descripcion</h2>
+                            <p>
+                                <!-- <input class="input-text" type="text" id="description" name="description"
+                                    value="<%= product.description %>"> -->
+                                <textarea class="input-text" name="description" id="description"><%= product.description %></textarea>
+                            </p>
+                            <ul>
+                                <li>Disponible: <span>En stock</span></li>
+                                <li>Categoria: <span>
+                                        <select id="category" name="category">
+                                            <option value="Electrónica">Electrónica</option>
+                                            <option value="Hardware">Hardware</option>
+                                            <option value="Periféricos">Periféricos</option>
+                                        </select>
+                                    </span></li>
+                                <li>Area de entrega: <span>Todo el país</span></li>
+                                <li>Costo de envio: <span>Gratis</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="purchase-info">
+                        <button type="submit" class="btn">Guardar</button>
+                    </div>
+
+                    <div class="social-links">
+                        <p>Compartir en:</p>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
 
-            </div>
-            <div class="product-content">
-                <h2 class="product-title"><%= product.name %></h2>
-                <a href="#" class="product-link">Nashe</a>
-                <div class="product-price">
-                    <p class="product-price">Precio: <span><%= product.price %> </span></p>
-                </div>
-                <div class="product-detail">
-                    <h2>Descripcion</h2>
-                    <p> <%= product.description %></p>
-                    <ul>
-                        <li>Disponible: <span>En stock</span></li>
-                        <li>Categoria: <span> <%= product.category %></span></li>
-                        <li>Area de entrega: <span>Todo el país</span></li>
-                        <li>Costo de envio: <span>Gratis</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="purchase-info">
-                <input type="number" min="0" value="1">
-                <button type="button" class="btn">
-                    Añadir al carrito <i class="fa fa-shopping-cart"></i>
-                </button>
-                <button type="button" class="btn">Comprar</button>
-            </div>
+            </main>
 
-            <div class="social-links">
-                <p>Compartir en:</p>
-                <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-
-    </main>
-
-    <%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>
 
 </body>
-
-</html>
