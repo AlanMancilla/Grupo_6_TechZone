@@ -7,23 +7,5 @@
       "password": "$2a$10$0J52evTARHOl7K9GMfH/O.cv./94HvYrXnNTRujFxD.lSYBf9I2PC",
       "role": "cliente",
       "avatar": "userDefault.png"
-   },
-   {
-      "id": 2,
-      "firstName": "asd",
-      "lastName": "asd",
-      "email": "asd@as.com",
-      "password": "$2a$10$rz7LWfR2h/y1Y3EzVUlv9Ogw/CM9VMt9XuIO6BPtd6Oo.Xai8UaUu",
-      "role": "cliente",
-      "avatar": "image-create1699133748355.png"
-   },
-   {
-      "id": 3,
-      "firstName": "asd",
-      "lastName": "asd",
-      "email": "asd@a.com",
-      "password": "$2a$10$7J1YYt4FBd2Auhqog97px.ZWkOpdMhVSDZWYt.2HrDqcDfpkcw1xi",
-      "role": "cliente",
-      "avatar": "userDefault.png"
    }
 ]
