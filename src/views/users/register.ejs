@@ -29,7 +29,7 @@
 
             </div>
 
-            <form class="formulario" method="POST" action="/users/Register">
+            <form class="formulario" method="POST" action="/users/Register" enctype="multipart/form-data">
                 <div class="texto-formulario">
                     <h2>Hola! Registrate aqui.</h2>
                 </div>
@@ -64,6 +64,14 @@
                 <div class="input">
                     <label for="check_password">Confirme su contraseña</label>
                     <input placeholder="Ingresa tu Contraseña" type="password" name="check_password" id="check_password">
+                </div>
+                <div class="product-img">
+                    <div class="img-display">
+                        <label for="input-image">
+                            <img src="/img/users/userDefault.png" alt="upload-image">
+                        </label>
+                        <input id="input-image" type="file" name="image">
+                    </div>
                 </div>
                 <div class="input">
                     <input type="submit" value="Registrate">

@@ -98,9 +98,8 @@ const userControllers = {
                 email: req.body.email,
                 password: cryptPassword,
                 role: "cliente",
-                avatar: /* req.file.filename || */ "userDefault.png"
+                avatar: req.file?.filename || "userDefault.png"
             }
-
 
             users.push(newUser);
 

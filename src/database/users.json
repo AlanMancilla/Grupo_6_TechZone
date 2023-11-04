@@ -10,38 +10,20 @@
    },
    {
       "id": 2,
-      "firstName": "aaaaaaaaa",
-      "lastName": "aaaaaa",
-      "email": "a@sd.com",
-      "password": "$2a$10$zJ0ZOTKcOpE9W39.MaOHEuCMVZCyyBb6n6mEjz8TRE7YP4JFqxMx.",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "asd@as.com",
+      "password": "$2a$10$rz7LWfR2h/y1Y3EzVUlv9Ogw/CM9VMt9XuIO6BPtd6Oo.Xai8UaUu",
       "role": "cliente",
-      "avatar": "userDefault.png"
+      "avatar": "image-create1699133748355.png"
    },
    {
       "id": 3,
-      "firstName": "qwerqrq",
-      "lastName": "zxcadsq",
-      "email": "a@de.com",
-      "password": "$2a$10$NmmYfYfMrbl8agPsPmP62u93ITZZKMxtEnQeQcvJxzpe4SVGC26FC",
-      "role": "client",
-      "avatar": "userDefault.png"
-   },
-   {
-      "id": 4,
       "firstName": "asd",
-      "lastName": "qwe",
-      "email": "asd@asd.com",
-      "password": "$2a$10$etN4HhM4eQRLCFS8EpiIROBiijSx6UNxMN7DLErm440wquCAmi.BO",
-      "role": "client",
-      "avatar": "userDefault.png"
-   },
-   {
-      "id": 5,
-      "firstName": "asd",
-      "lastName": "qwe",
-      "email": "a@as.com",
-      "password": "$2a$10$3wEOFzt2nc38h3Owcz9hj.RVRBVoS3fqN0lCAalbtiRCoJ8BqK5q2",
-      "role": "client",
+      "lastName": "asd",
+      "email": "asd@a.com",
+      "password": "$2a$10$7J1YYt4FBd2Auhqog97px.ZWkOpdMhVSDZWYt.2HrDqcDfpkcw1xi",
+      "role": "cliente",
       "avatar": "userDefault.png"
    }
 ]

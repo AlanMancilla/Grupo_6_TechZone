@@ -1,10 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
 const { body } = require('express-validator');
 const userControllers = require('../controllers/usersController');
 
-const guestMiddleware = require('../middlewares/userGuestMiddleware')
-const authMiddleware = require('../middlewares/userAuthMiddleware')
+const guestMiddleware = require('../middlewares/userGuestMiddleware');
+const authMiddleware = require('../middlewares/userAuthMiddleware');
+
+const storage = multer.diskStorage({
+   destination: (req, file, cb) =>{
+      cb(null, path.join(__dirname, '../../public/img/users'))
+   },
+   filename: (req, file, cb) =>{
+      const newFilename = 'image-create' + Date.now() + path.extname(file.originalname);
+      cb(null, newFilename)
+   }
+});
+
+const upload = multer({ storage });
 
 const validateRegister = [
    body('name').notEmpty().withMessage('Debes completar este campo con tu nombre'),
@@ -30,7 +44,7 @@ router.post('/login', validateLogin, userControllers.processLogin);
 
 router.get('/register', guestMiddleware, userControllers.register);
 
-router.post('/register', validateRegister, userControllers.userStore);
+router.post('/register',upload.single('image'), validateRegister,  userControllers.userStore);
 
 router.get('/profile', authMiddleware ,userControllers.profile);
 

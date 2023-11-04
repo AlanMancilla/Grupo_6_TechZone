@@ -6,28 +6,23 @@ const productsFilePath = path.join(__dirname, '../database/products.json');
 
 const productDetailControllers = {
     productList: (req, res) => {
-        /* const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
         db.Product.findAll()
             .then(products => {
                 res.render('products/list', {products})
             })
         
-        /* res.render('products/list', {products: products}) */
     },
     productCreate: (req, res) => {
         res.render('products/productcreate.ejs')
     },
     productDetail: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        const id = req.params.id;
-
-        const productToSend = products.find(product => {
-            return product.id == id
+        db.Product.findOne({where: { id : req.params.id }, })
+        .then(product => {
+            res.render('products/productDetail.ejs', { product: product })
         })
 
-        res.render('products/productDetail.ejs', { product: productToSend })
     },
     productCreatePost: (req, res) => {
 
@@ -53,51 +48,47 @@ const productDetailControllers = {
 
     },
     productEdit: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        const id = req.params.id;
-
-        const productToSend = products.find(product => {
-            return product.id == id
+        db.Product.findOne({where: { id : req.params.id }, })
+        .then(product => {
+            res.render('products/productEdit.ejs', { product: product })
         })
-
-        res.render('products/productEdit.ejs', { product: productToSend })
+    
     },
     productEditPUT: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        const id = req.params.id
 
-        /* const product = products.find((product) => {return product.id == id})
-
-        let product = req.body;
-        product.image = req.file.filename; */
-        let productEdit = req.body;
-        productEdit.id = Number(id);
-        productEdit.price = Number(productEdit.price);
-        productEdit.discount = Number(productEdit.discount);
-
+        
+        let imageUpdate = "";
+        
         if( !req.file ){
-            productEdit.image = req.body.image_edit;
-            delete productEdit.image_edit
+            imageUpdate = req.body.image_edit;
         } else {
-            productEdit.image = req.file.filename;
+            imageUpdate = req.file.filename;
         }
-
-        products[ id - 1 ] = productEdit;
-
-        console.log(req.file)
-        console.log(req.body)
-
-        fs.writeFile(productsFilePath, JSON.stringify(products), 'utf-8', (err) => {
-            if (err) {
-                console.error('Error al escribir el archivo:', err);
-            } else {
-                console.log('Archivo sobrescrito exitosamente.');
-            }
-        })
-
-        res.render('products/productDetail.ejs', { product: productEdit });
-
+        
+        let productEdit = {
+            id : Number(req.params.id),
+            name : req.body.name,
+            description : req.body.description,
+            category : req.body.category,
+            image : imageUpdate,
+            price : Number(req.body.price),
+            discount : Number(req.body.discount),
+        };
+        
+        db.Product.update( productEdit,
+            {
+                where : {
+                    id: Number(req.params.id)
+                }
+            })
+            .then( product => {
+                res.redirect(`/productDetail/${Number(req.params.id)}`);
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+        
     },
     productDELETE: (req, res) => {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));

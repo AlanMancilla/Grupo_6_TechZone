@@ -14,10 +14,8 @@ body {
    justify-content: space-between;
 }
 
-h2,
-h3 {
+h2 {
    font-size: 40px;
-   margin-left: 2vw;
 }
 
 h4 {
@@ -38,14 +36,10 @@ a{
    text-decoration: none;
 }
 
-.header-footer a {
-   color: #FFF;
-}
-
 /* main */
-.container {
+/* .container {
    margin-left: 0;
-}
+} */
 
 .slider-wrapper {
    display: none;
@@ -55,7 +49,7 @@ a{
 .slider {
 
    display: flex;
-   aspect-ratio: 192/53;
+   aspect-ratio: 150/53;
    width: 100%;
    position: relative;
    overflow: scroll hidden;
@@ -118,22 +112,30 @@ a{
    width: 100%;
 } */
 
+.products-view{
+   max-width: 1400px;
+   margin: auto;
+}
 
 .products {
-   margin: auto;
+   max-width: 1400px;
    background-color: #999;
-   display: flex;
-   justify-content: space-evenly;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+   gap: 16px;
+   padding: 20px;
+   justify-items: center;
+}
 
+.products a{
+   width: 100%;
 }
 
 .products article {
-   width: 43vw;
    min-width: 135px;
    background-color: #FFF;
    border-radius: 10px;
-   margin: 10px 5px;
+   height: 100%;
    padding: 5px;
 }
 
@@ -180,10 +182,6 @@ a{
    .slider-wrapper {
       display: block;
       position: relative;
-   }
-
-   .products article {
-      width: 22vw;
    }
 
 }

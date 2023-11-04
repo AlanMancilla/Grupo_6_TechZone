@@ -91,6 +91,11 @@
     border-left: #999 solid 1px;
 }
 
+.avatar-header{
+    max-width: 35px;
+    min-height: 20px;
+}
+
 .login-icon {
     color: #FFF;
 }
@@ -102,6 +107,8 @@
 .log-dropdown{
     position: relative;
     padding: 7px;
+    display: flex;
+    align-items: center;
 }
 
 .log-dropdown-toggle{
@@ -131,6 +138,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 1;
 }
 
 .cart{
@@ -179,10 +187,10 @@
     padding: 10px;
     background-color: #37373f;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: start;
     gap: 10px;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .footer-contact p {
@@ -234,5 +242,16 @@
 
     .footer-contact div {
         width: 30vw;
+    }
+
+    .footer-contact{
+        padding: 10px;
+        background-color: #37373f;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: start;
+        gap: 10px;
     }
 }
