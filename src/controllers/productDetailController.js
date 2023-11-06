@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const db = require("../database/models");
+const { log } = require("console");
 
 const productsFilePath = path.join(__dirname, "../database/products.json");
 
