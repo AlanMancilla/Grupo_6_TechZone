@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Lista de usuarios</title>
+    <title>perfil</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,23 +23,50 @@
    <%- include('../partials/header') %>
 
    <main class="body-login">
-      <section class="contenedor">
+      <div class="conteiner-profile">
+         <h1>Mi cuenta</h1>
+         <section class="section-profile">            
+            <% if (user != undefined) { %>
+                  <section class="data-first">
+                     <h3>Mis pedidos</h3>
+                     <article class="orders">
+                        <div>
+                           <h4>Número de reserva: <%= '`${1597346}`' %></h4>
+                           Monto: $<%= '`${285.663}`' %>
+                        </div>
+                        <div>
+                           <div>Fecha: <%= '`${17/10/2023}`' %></div>
+                           <button type="button" >Ver detalle</button>
+                        </div>
+                     </article>
+                     <article class="orders">
+                        <div>
+                           <h4>Número de reserva: <%= '`${1597346}`' %></h4>
+                           Monto: $<%= '`${285.663}`' %>
+                        </div>
+                        <div>
+                           <div>Fecha: <%= '`${17/10/2023}`' %></div>
+                           <button type="button" >Ver detalle</button>
+                        </div>
+                     </article>
+                  </section>
+
+                  <section class="data-second">
+                     <legend>
+                        | Nombre Completo: <%= user.lastName %> <%= user.firstName %> |
+                     </legend>
+                     <div>
+                        <img src="/img/users/<%= user.avatar %>" alt="imagen de usuario" class="userImg">
+                        <%= user.role %>
+                     </div>
+                  </section>
+                  
+            <% } else{ %>
+               <i>No Hay usuario</i>
+            <% } %>
+         </section>
    
-         <% if (user != undefined) { %>
-               <fieldset>
-                  <legend>
-                     | Nombre Completo: <%= user.lastName %> <%= user.firstName %> |
-                  </legend>
-                  <div>
-                     <img src="/img/users/<%= user.avatar %>" alt="imagen de usuario" class="userImg">
-                     <%= user.role %>
-                  </div>
-               </fieldset>
-         <% } else{ %>
-            <i>No Hay usuario</i>
-         <% } %>
-   
-      </section>    
+      </div>    
    </main>
 
 

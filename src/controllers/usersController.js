@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const db = require("../database/models");
 const bcrypt = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../database/users.json');
@@ -44,6 +45,15 @@ const userControllers = {
                     }
                 }
             });
+            /* db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            }).then(user => {
+                if( bcrypt.compareSync(req.body.password, user.password)){
+                    userLogin = user;
+                }
+            }) */
 
             if(userLogin == undefined){
                 return res.render('users/login', {
@@ -58,7 +68,7 @@ const userControllers = {
             req.session.userLogged = userLogin;
 
             if(req.body.remember_user){
-                res.cookie('userEmail', req.body.email, {maxAge: 1000 * 60 * 2})
+                res.cookie('userEmail', req.body.email, {maxAge: 1000 * 60 * 48}) //1 seg, 1min , hours
             }
 
             res.redirect('/users/profile');
