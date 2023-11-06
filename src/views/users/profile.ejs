@@ -2,9 +2,9 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>perfil</title>
     
@@ -12,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/users.css">
-    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
+   <link rel="stylesheet" href="/css/normalize.css">
+   <link rel="stylesheet" href="/css/users.css">
+   <link rel="stylesheet" href="/css/partialsheaderfooter.css">
 
-    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
 
                   <section class="data-second">
                      <legend>
-                        | Nombre Completo: <%= user.lastName %> <%= user.firstName %> |
+                        | Nombre Completo: <%= user.last_name %> <%= user.name %> |
                      </legend>
                      <div>
                         <img src="/img/users/<%= user.avatar %>" alt="imagen de usuario" class="userImg">
@@ -70,7 +70,7 @@
    </main>
 
 
-   <%- include('../partials/footer') %>
+      <%- include('../partials/footer') %>
 </body>
 
 </html>
