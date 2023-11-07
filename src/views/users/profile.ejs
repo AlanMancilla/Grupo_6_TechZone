@@ -27,38 +27,69 @@
          <h1>Mi cuenta</h1>
          <section class="section-profile">            
             <% if (user != undefined) { %>
-                  <section class="data-first">
-                     <h3>Mis pedidos</h3>
-                     <article class="orders">
-                        <div>
-                           <h4>Número de reserva: <%= '`${1597346}`' %></h4>
-                           Monto: $<%= '`${285.663}`' %>
-                        </div>
-                        <div>
-                           <div>Fecha: <%= '`${17/10/2023}`' %></div>
-                           <button type="button" >Ver detalle</button>
-                        </div>
-                     </article>
-                     <article class="orders">
-                        <div>
-                           <h4>Número de reserva: <%= '`${1597346}`' %></h4>
-                           Monto: $<%= '`${285.663}`' %>
-                        </div>
-                        <div>
-                           <div>Fecha: <%= '`${17/10/2023}`' %></div>
-                           <button type="button" >Ver detalle</button>
-                        </div>
-                     </article>
+                  <section class="data-first col-profile">
+                     <div>
+                        <h3>Mis pedidos</h3>
+                        <article class="orders box-shadow-profile">
+                           <div>
+                              <h4>Número de reserva: <%= '`${1597346}`' %></h4>
+                              Monto: $<%= '`${285.663}`' %>
+                           </div>
+                           <div>
+                              <div>Fecha: <%= '`${17/10/2023}`' %></div>
+                              <button type="button" >Ver detalle</button>
+                           </div>
+                        </article>
+                        <article class="orders box-shadow-profile">
+                           <div>
+                              <h4>Número de reserva: <%= '`${1597346}`' %></h4>
+                              Monto: $<%= '`${285.663}`' %>
+                           </div>
+                           <div>
+                              <div>Fecha: <%= '`${17/10/2023}`' %></div>
+                              <button type="button" >Ver detalle</button>
+                           </div>
+                        </article>
+                     </div>
                   </section>
 
-                  <section class="data-second">
-                     <legend>
-                        | Nombre Completo: <%= user.last_name %> <%= user.name %> |
-                     </legend>
-                     <div>
-                        <img src="/img/users/<%= user.avatar %>" alt="imagen de usuario" class="userImg">
-                        <%= user.role %>
-                     </div>
+                  <section class="data-second col-profile">
+                     <article class="data-profile box-shadow-profile">
+                           <img src="/img/users/<%= user.avatar %>" alt="imagen de usuario" class="userImg">
+                           <div class="data">
+                              <div><strong>Nombre:</strong> <%= user.name %></div>
+                              <div><strong>Apellido:</strong> <%= user.last_name %></div>
+                              <div><strong>Direccion de email:</strong> <%= user.email %></div>
+                              <div><strong>Cuenta tipo:</strong> <%= user.role %></div>
+                           </div>
+                     </article>
+                     <article>
+                        <h3>Facturas</h3>
+                        <div class="box-shadow-profile">
+                           <strong>Tipo:</strong> <span>Factura B</span>
+                           <div>
+                              <strong>Comprobante:</strong> <span>0000-000000001</span>
+                           </div>
+                        </div>
+                        <div class="box-shadow-profile">
+                           <strong>Tipo:</strong> <span>Factura B</span>
+                           <div>
+                              <strong>Comprobante:</strong> <span>0000-000000001</span>
+                           </div>
+                        </div>
+                     </article>
+                     <article>
+                        <h3>Domicilios</h3>
+                        <div class="box-shadow-profile">
+                           <strong>Domicilio:</strong> <span>Factura B</span>
+                           <div>
+                              <strong>Codigo postal:</strong> <span>5000</span>
+                           </div>
+                           <div>
+                              <strong>Recibe:</strong> <span><%= user.name %> <%= user.last_name %></span>
+                           </div>
+                        </div>
+                     </article>                     
                   </section>
                   
             <% } else{ %>

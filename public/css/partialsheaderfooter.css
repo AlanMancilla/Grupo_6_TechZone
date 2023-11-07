@@ -109,6 +109,7 @@
     padding: 7px;
     display: flex;
     align-items: center;
+    gap: 7px;
 }
 
 .log-dropdown-toggle{
@@ -139,6 +140,7 @@
     flex-direction: row;
     align-items: center;
     z-index: 1;
+    gap: 7px;
 }
 
 .cart{
@@ -148,6 +150,7 @@
 
 .cart-icon {
     color: #FFF;
+    padding-right: 5px;
 }
 
 .cart-text {

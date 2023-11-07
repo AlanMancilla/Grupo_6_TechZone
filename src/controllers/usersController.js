@@ -23,43 +23,46 @@ const userControllers = {
     res.render("users/login");
   },
 
-  processLogin: (req, res) => {
+  processLogin: async (req, res) => {
     const errors = validationResult(req);
-
+  
     if (errors.isEmpty()) {
       let userLogin;
-
-      db.User.findOne({
-        where: {
-          email: req.body.email,
-        },
-      })
-        .then((user) => {
-          console.log(user);
-          if (bcrypt.compareSync(req.body.password, user.password)) {
-            userLogin = user.dataValues;
-          }
-        })
-        .then((algo) => {
-          console.log(userLogin);
-          if (userLogin == undefined) {
-            return res.render("users/login", {
-              errors: {
-                msg: "credenciales invalidas",
-              },
-              old: req.body,
-            });
-          }
-
-          delete userLogin.password;
-          req.session.userLogged = userLogin;
-
-            if(req.body.remember_user){
-                res.cookie('userEmail', req.body.email, {maxAge: 1000 * 60 * 48}) //1 seg, 1min , hours
-            }
-
-          res.render("users/profile", { user: userLogin });
+  
+      try {
+        const user = await db.User.findOne({
+          where: {
+            email: req.body.email,
+          },
         });
+  
+        if (user && bcrypt.compareSync(req.body.password, user.password)) {
+          userLogin = user.dataValues;
+        }
+  
+        if (userLogin === undefined) {
+          return res.render("users/login", {
+            errors: {
+              msg: "Credenciales inválidas",
+            },
+            old: req.body,
+          });
+        }
+  
+        req.session.userLogged = userLogin;
+
+        delete userLogin.password;
+        delete req.session.userLogged.password;
+  
+        if (req.body.remember_user) {
+          res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 48 }); // seg * min * 48 horas
+        }
+  
+        res.render("users/profile", { user: userLogin });
+      } catch (error) {
+        console.error("Error en el proceso de inicio de sesión:", error);
+        return res.redirect("index");
+      }
     } else {
       return res.render("users/login", {
         errors: errors.mapped(),

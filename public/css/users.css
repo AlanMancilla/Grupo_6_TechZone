@@ -13,6 +13,10 @@ html{
     box-sizing: inherit;
 }
 
+h3{
+    margin: 7px 0;
+}
+
 .body-login{
     font-family: var(--fuente);
     color: var(--blanco);
@@ -124,10 +128,6 @@ html{
     background-color: var(--azulOscuro);
 }
 
-.userImg{
-    width: 6vw;
-}
-
 a {
     color: var(--blanco);
 }
@@ -156,14 +156,13 @@ a {
 .conteiner-profile{
     margin: 0 auto;
     max-width: 1320px;
-    width: 95%;
 }
 
 .section-profile{
     display: flex;
     gap: 15px;
     justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
 }
 
 .data-first{
@@ -174,13 +173,23 @@ a {
     padding: 10px;
 }
 
+.col-profile{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box-shadow-profile{
+    box-shadow: rgb(0 0 0 / 35%) 0px 0px 3px 2px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
 .orders{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 .data-second{
@@ -189,4 +198,28 @@ a {
     flex: 1;
     border-radius: 5px;
     padding: 10px;
+}
+
+.userImg{
+    width: 33%;
+    align-self: center;
+}
+
+.data{
+    flex: 1;
+}
+.data-profile{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+@media (width > 770px) {
+    .section-profile{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .conteiner-profile {
+        width: 95%;
+    }
 }
