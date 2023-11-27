@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= tittle %></title>
-    <link rel="icon" href="/img/TZ.png" type="image/x-icon">
-
-    <link rel="stylesheet" href="/css/<%= css %>">
-    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
-</head>
+<%- include('./partials/head.ejs', { 
+    css: ["index.css", "partialsheaderfooter.css"],
+    title: "TechZone" 
+}) %>
 
 <body>
     <%- include('./partials/header') %>

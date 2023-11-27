@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles</title>
-
-    <link rel="stylesheet" href="/css/detalles.css">
-    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
-</head>
+<%- include('../partials/head.ejs', { 
+    css: ["detalles.css", "partialsheaderfooter.css"], 
+    title: "Detalles" 
+}) %>
 
 <body>
     <%- include('../partials/header') %>
@@ -34,11 +26,11 @@
                     </h2>
                     <a href="#" class="product-link">Nashe</a>
                     <div class="product-price">
-                        <p class="product-price">Precio: <span><%= product.price || '404' %></span></p>
+                        <p class="product-price">Precio: $ <span><%= product.price || '404' %></span></p>
                         <p>Descuento: <%= product.discount %>%</p>
                     </div>
                     <div class="product-detail">
-                        <h2>Descripcion</h2>
+                        <h2>Descripción:</h2>
                         <p>
                             <%= product.description || '404' %>
                         </p>

@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/productCart.css">
-  <link rel="stylesheet" href="/css/partialsheaderfooter.css">
-  
-  <script src="https://kit.fontawesome.com/fdf2817442.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-  <title>Carrito</title>
-</head>
+<%- include('../partials/head.ejs', { 
+  css: ["productCart.css", "partialsheaderfooter.css"], 
+  title: "Carrito" 
+}) %>
 
 <body>
   <%- include('../partials/header') %>
@@ -73,16 +65,6 @@
 
   <%- include('../partials/footer') %>
   
-  <!-- <footer>
-    <h3>Redes sociales</h3>
-    <div class="redes-sociales">
-      <a href="#"><i class="fa-brands fa-facebook"></i></a> 
-      <a href="#"><i class="fa-brands fa-twitter"></i></a> 
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
-    
-  </footer> -->
 </body>
 
 </html>

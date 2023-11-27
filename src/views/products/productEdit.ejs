@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edición de producto</title>
-
-    <link rel="stylesheet" href="/css/detalles.css">
-    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
-</head>
+<%- include('../partials/head.ejs', { 
+    css: ["detalles.css", "partialsheaderfooter.css"], 
+    title: "Edición de producto" 
+}) %>
 
 <body>
     <%- include('../partials/header') %>
@@ -28,6 +20,9 @@
                                     <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
                                 </div>
                                 <input id="input-image" type="file" name="image">
+                                <% if (locals && locals.errors && errors.image) { %>
+                                    <p class="msg_error"><%= errors.image.msg %></p>
+                                <% } %>
                             </label>
                             <input style="display: none;" id="image_edit" type="text" name="image_edit" value="<%= product.image %>">
                         </div>
@@ -35,13 +30,19 @@
                     </div>
                     <div class="product-content">
                         <h2 class="product-title">
-                            <textarea class="input-text" type="text" id="name" name="name"
-                                required><%= product.name %></textarea>
+                            <input class="input-text" type="text" id="name" name="name"
+                            required value="<%= product.name %>"></input>
                         </h2>
+                        <% if (locals && locals.errors && errors.name) { %>
+                            <p class="msg_error"><%= errors.name.msg %></p>
+                        <% } %>
                         <a href="#" class="product-link">Nashe</a>
                         <div class="product-price">
                             <p class="product-price">Precio: <span> <input class="input-text" type="number" id="precio"
-                                        name="price" value="<%= product.price %>"> </span></p>
+                                        name="price" value="<%= product.price %>"> </span>
+                            <% if (locals && locals.errors && errors.price) { %>
+                                <p class="msg_error"><%= errors.price.msg %></p>
+                            <% } %></p>
                             <p>
                                 Descuento: <input class="input-text" type="number" name="discount" placeholder="descuento. no es necesario" min="0" max="100" value="<%= product.discount %>"> %
                             </p>
@@ -49,17 +50,19 @@
                         <div class="product-detail">
                             <h2>Descripcion</h2>
                             <p>
-                                <!-- <input class="input-text" type="text" id="description" name="description"
-                                    value="<%= product.description %>"> -->
-                                <textarea class="input-text" name="description" id="description"><%= product.description %></textarea>
+                                <textarea name="description" id="description"><%= product.description %></textarea>
+                                <% if (locals && locals.errors && errors.description) { %>
+                                    <p class="msg_error"><%= errors.description.msg %></p>
+                                <% } %>
                             </p>
                             <ul>
                                 <li>Disponible: <span>En stock</span></li>
                                 <li>Categoria: <span>
-                                        <select id="category" name="category">
-                                            <option value="Electrónica">Electrónica</option>
-                                            <option value="Hardware">Hardware</option>
-                                            <option value="Periféricos">Periféricos</option>
+                                        <select id="category" name="category" >
+                                            <option value="Varios" <% if (product.category === 'Varios') { %>selected<% } %>>Varios</option>
+                                            <option value="Electronica" <% if (product.category === 'Electronica') { %>selected<% } %>>Electrónica</option>
+                                            <option value="Hardware" <% if (product.category === 'Hardware') { %>selected<% } %>>Hardware</option>
+                                            <option value="Perifericos" <% if (product.category === 'Perifericos') { %>selected<% } %>>Periféricos</option>
                                         </select>
                                     </span></li>
                                 <li>Area de entrega: <span>Todo el país</span></li>

@@ -7,7 +7,7 @@
 }
 
 body {
-   background-color: #ffffff;
+   background-color: var(--blanco);
    display: flex;
    flex-direction: column;
    min-height: 100vh;
@@ -20,7 +20,7 @@ h2 {
 
 h4 {
    font-size: 28px;
-   color: green;
+   color: var(--verde);
 }
 
 p {
@@ -32,18 +32,15 @@ li {
 }
 
 a{
-   color: #343636;
+   color: var(--gris);
    text-decoration: none;
 }
-
-/* main */
-/* .container {
-   margin-left: 0;
-} */
 
 .slider-wrapper {
    display: none;
    position: relative;
+   max-width: 1400px;
+   margin: auto;
 }
 
 .slider {
@@ -119,7 +116,7 @@ a{
 
 .products {
    max-width: 1400px;
-   background-color: #999;
+   background-color: var(--grisClaro);
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
    gap: 16px;
@@ -133,7 +130,7 @@ a{
 
 .products article {
    min-width: 135px;
-   background-color: #FFF;
+   background-color: var(--blanco);
    border-radius: 10px;
    height: 100%;
    padding: 5px;
@@ -146,7 +143,7 @@ a{
 
 .products article img {
    width: 100%;
-   background-color: #343636;
+   background-color: var(--gris);
 }
 
 .precio {
@@ -155,20 +152,20 @@ a{
 }
 
 .descuento {
-   background-color: green;
-   color: black;
+   background-color: var(--verde);
+   color: var(--negro);
    border-radius: 8px;
    padding: 1px 4px;
 }
 
 .descripciones {
    overflow-wrap: break-word;
-   color: #343636;
+   color: var(--gris);
    text-align: center;
 }
 
 .footer-contact p {
-   color: #FFF;
+   color: var(--blanco);
 }
 
 @media (min-width:500px) {

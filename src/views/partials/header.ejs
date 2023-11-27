@@ -9,12 +9,14 @@
         <a href="/">
             <img class="logo" src="/img/logotz_Mesadetrabajo_1.png" alt="Logo TechZone"></img>
         </a>
+        
+        <form class="search-group" action="/productDetail/search" method="GET">
+                <input class="search" type="text" id="search" name="search">
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+        </form>
             
-        <span class="search-group">
-            <input class="search" type="text">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
-
         <div class="log-cart">
             <% if (locals.isLogged) { %>
                 <div class="log-dropdown">

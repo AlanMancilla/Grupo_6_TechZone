@@ -1,22 +1,17 @@
 const { validationResult } = require('express-validator');
-const fs = require('fs');
-const path = require('path');
 const db = require("../database/models");
 const bcrypt = require('bcryptjs');
 
-const usersFilePath = path.join(__dirname, '../database/users.json');
-
 const userControllers = {
   list: (req, res) => {
-    let usersJson = fs.readFileSync(usersFilePath, "utf-8");
-    let users;
-
-    if (usersJson == "") {
-      res.render("users/userList", { users });
-    } else {
-      users = JSON.parse(usersJson);
-      res.render("users/userList", { users });
-    }
+    db.User.findAll()
+      .then(users => {
+        if (users == "") {
+          res.render("users/userList", { users });
+        } else {
+          res.render("users/userList", { users });
+        }
+      })
   },
 
   login: (req, res) => {
@@ -58,7 +53,8 @@ const userControllers = {
           res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 48 }); // seg * min * 48 horas
         }
   
-        res.render("users/profile", { user: userLogin });
+        res.redirect("/users/profile")
+        
       } catch (error) {
         console.error("Error en el proceso de inicio de sesión:", error);
         return res.redirect("index");

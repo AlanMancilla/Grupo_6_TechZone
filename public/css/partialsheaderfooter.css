@@ -1,17 +1,28 @@
 :root{
+    --blanco:#fff;
+    --grisClaro: #999;
+    --gris: #343636;
     --gris-oscuro: #2D2D33;
+    --negro: #000;
+    --errorBackgroud: #f99;
+    --errorColor: #FF0000;
+    --verde: #008000;
+    --azul:#134074;
+    --azulOscuro:#0B2545;
+    --azulGris:#8DA9C4;
+    --fuente:'Quicksand', sans-serif;
 }
 
 /*Estilos globales*/
 .header-footer {
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-    color: #FFF;
+    color: var(--blanco);
 }
 
 .header-footer h4 {
     font-size: 28px;
-    color: green;
+    color: var(--verde);
 }
 
 .header-footer p {
@@ -24,7 +35,7 @@
 
 .header-footer a {
     text-decoration: none;
-    color: #FFF;
+    color: var(--blanco);
 }
 
 .header-footer i {
@@ -51,7 +62,7 @@
 
 .burger-menu {
     margin-left: 8px;
-    color: green;
+    color: var(--verde);
     font-size: 25px;
 }
 
@@ -76,19 +87,19 @@
 }
 
 .search:focus {
-    outline: #134074 2px solid;
+    outline: var(--azul) 2px solid;
 }
 
 .search-group i {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #FFF;
-    color: black;
+    background-color: var(--blanco);
+    color: var(--negro);
     font-size: 18px;
     padding: 8px 12px;
     border-radius: 8px;
-    border-left: #999 solid 1px;
+    border-left: var(--grisClaro) solid 1px;
 }
 
 .avatar-header{
@@ -97,7 +108,7 @@
 }
 
 .login-icon {
-    color: #FFF;
+    color: var(--blanco);
 }
 
 .login-icon i {
@@ -149,7 +160,7 @@
 }
 
 .cart-icon {
-    color: #FFF;
+    color: var(--blanco);
     padding-right: 5px;
 }
 
@@ -159,7 +170,7 @@
 
 .header-footer nav{
     background-color: #e7e7e7;
-    color: #000;
+    color: var(--negro);
 } 
 
 .header-nav {
@@ -179,7 +190,7 @@
     display: none;
     margin: 0;
     padding: 5px;
-    color: #000;
+    color: var(--negro);
 }
 
 .terms li {
@@ -197,7 +208,7 @@
 }
 
 .footer-contact p {
-    color: #FFF;
+    color: var(--blanco);
 }
 
 @media (min-width:770px) {
@@ -248,13 +259,8 @@
     }
 
     .footer-contact{
-        padding: 10px;
-        background-color: #37373f;
-        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        flex-wrap: wrap;
         align-items: start;
-        gap: 10px;
     }
 }

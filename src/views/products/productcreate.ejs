@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creacion de producto</title>
-
-    <link rel="stylesheet" href="/css/detalles.css">
-    <link rel="stylesheet" href="/css/partialsheaderfooter.css">
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/bd4409a55c.js" crossorigin="anonymous"></script>
-</head>
+<%- include('../partials/head.ejs', { 
+    css: ["detalles.css", "partialsheaderfooter.css"], 
+    title: "Creación de producto" 
+}) %>
 
 <body>
     <%- include('../partials/header') %>
@@ -27,34 +19,49 @@
                         <label for="input-image">
                             <img src="/img/products/upload-image.png" alt="upload-image">
                         </label>
-                        <input required id="input-image" type="file" name="image">
+                        <input id="input-image" type="file" name="image">
+                        <% if (locals && locals.errors && errors.image) { %>
+                            <p class="msg_error"><%= errors.image.msg %></p>
+                        <% } %>
                     </div>
                 </div>
                 <!-- informacion del producto -->
                 <div class="product-content">
                     <!-- titulo -->
                     <h2 class="product-title">
-                        <textarea class="input-text" type="text" rows="3"
-                        name="name" placeholder="Titulo del producto" ></textarea>
+                        <input class="input-text" type="text" rows="3" value="<%= locals.old?.name || '' %>"
+                        name="name" placeholder="Titulo del producto" ></input>
                     </h2>
+                    <% if (locals && locals.errors && errors.name) { %>
+                        <p class="msg_error"><%= errors.name.msg %></p>
+                    <% } %>
                     <a href="#" class="product-link">Nashe</a>
                     <!-- precio -->
                     <div class="product-price">Precio:
-                        <input required class="input-text" type="number" name="price" placeholder="100000" min="0">
-                        <input class="input-text" type="number" name="discount" placeholder="descuento. no es necesario" min="0" max="100">
+                        $ <input class="input-text" type="number" name="price" placeholder="100000" min="0" value="<%= locals.old?.price || '' %>">
+                        <% if (locals && locals.errors && errors.price) { %>
+                            <p class="msg_error"><%= errors.price.msg %></p>
+                        <% } %>
+                    </div>
+                    <div class="product-price">Descuento:
+                        <input class="input-text" type="number" name="discount" placeholder="0-100" min="0" max="100" value="<%= locals.old?.discount || '' %>">%
                     </div>
                     <!-- detalles -->
                     <div class="product-detail">
-                        <h2>Descripcion</h2>
+                        <h2>Descripción:</h2>
                         <p>
-                            <textarea required class="input-text" type="text" name="description"  rows="3"
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam autem a repellendus debitis quidem culpa inventore temporibus ullam necessitatibus explicabo!"></textarea>
+                            <textarea type="text" name="description"  rows="3"
+                            placeholder="Descripción del producto"><%= locals.old?.description || '' %></textarea>
+                            <% if (locals && locals.errors && errors.description) { %>
+                                <p class="msg_error"><%= errors.description.msg %></p>
+                            <% } %>
                         </p>
                         <ul>
                             <li>Disponible: <span>En stock</span></li>
                             <li>
                                 <label for="category">Categoria:</label>
                                 <select id="category" name="category">
+                                    <option value="Varios">Varios</option>
                                     <option value="Electrónica">Electrónica</option>
                                     <option value="Hardware">Hardware</option>
                                     <option value="Periféricos">Periféricos</option>
