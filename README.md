@@ -11,18 +11,11 @@ Nuestro equipo de **profesionales** capacitados y amables está listo para brind
 ***En TechZone, nuestra prioridad es proporcionarte los productos y servicios que te ayuden a sacar el máximo provecho de tu tecnología y hacer tus proyectos realidad.***
 
 ## PRESENTACION GRUPO 6:
-- Valentin Iriarte: Tengo 18 años, estudio Analista Programador Universitario y me especializo en diseño grafico y editor de video.
-- Juan Alexander Madrigal: Tengo 22 años, Actualmente estoy terminando mi secundario, y tambien soy amante de los mmorpg
+- Valentin Iriarte: Tengo 18 años, estudio Analista Programador Universitario y me especializo en diseño grafico y editor de video. :beaver:
+- Juan Alexander Madrigal: Tengo 22 años, Actualmente estoy terminando mi secundario, y tambien soy amante de los mmorpg :beaver:
 - Sajama Ernesto Alvaro: Soy un estudiante universitario de 22 años, apasionado por los videojuegos. :beaver:
-- Amador Nicolás Nestor David: Tengo 24 años, soy estudiante de laboratorio y tengo una forrajeria, me gusta todo lo que tenga que ver con computadoras. :shipit:
-- Mancilla Torres Alan Daniel: Tengo 23 años, estudio un profesorado y me gusta jugar videojuegos.
-- Chorolque Angelo Matias: Tengo 22 años, soy estudiante de programación, juego tennis, me gusta la moda, me gustan mucho las computadoras y el hardware en general
-  
-### Grupo 
-- Sajama Ernesto Alvaro
-- Juan Alexander Madrigal
-- Iriarte Gloss Valentin Mateo 
-- Amador Nicolás Nestor David
-- Mancilla Torres Alan Daniel
 
-- Chorolque Angelo Matias 
+## SITIOS DE REFERENCIA: 
+www.venex.com.ar
+compragamer.com
+www.maximus.com.ar
