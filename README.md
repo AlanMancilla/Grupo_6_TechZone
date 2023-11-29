@@ -16,6 +16,6 @@ Nuestro equipo de **profesionales** capacitados y amables está listo para brind
 - Sajama Ernesto Alvaro: Soy un estudiante universitario de 22 años, apasionado por los videojuegos. :beaver:
 
 ## SITIOS DE REFERENCIA: 
-www.venex.com.ar
-compragamer.com
-www.maximus.com.ar
+- www.venex.com.ar
+- www.compragamer.com
+- www.maximus.com.ar
