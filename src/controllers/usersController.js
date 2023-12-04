@@ -20,21 +20,21 @@ const userControllers = {
 
   processLogin: async (req, res) => {
     const errors = validationResult(req);
-  
+
     if (errors.isEmpty()) {
       let userLogin;
-  
+
       try {
         const user = await db.User.findOne({
           where: {
             email: req.body.email,
           },
         });
-  
+
         if (user && bcrypt.compareSync(req.body.password, user.password)) {
           userLogin = user.dataValues;
         }
-  
+
         if (userLogin === undefined) {
           return res.render("users/login", {
             errors: {
@@ -43,18 +43,18 @@ const userControllers = {
             old: req.body,
           });
         }
-  
+
         req.session.userLogged = userLogin;
 
         delete userLogin.password;
         delete req.session.userLogged.password;
-  
+
         if (req.body.remember_user) {
           res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 48 }); // seg * min * 48 horas
         }
-  
+
         res.redirect("/users/profile")
-        
+
       } catch (error) {
         console.error("Error en el proceso de inicio de sesión:", error);
         return res.redirect("index");
