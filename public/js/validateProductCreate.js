@@ -1,6 +1,6 @@
 function validarProduct() {
     let name = document.getElementById('name').value;
-    let Description = document.getElementById('Description').value;
+    let description = document.getElementById('description').value;
     let image = document.getElementById('input-image').value;
 
     // Validar name
@@ -9,11 +9,11 @@ function validarProduct() {
         return false;
     }
 
-   // Validar descripcion
-   if (Description.length < 20) {
-    alert('La Descripcion debe tener al menos 20 caracteres.');
-    return false;
-}
+    // Validar descripcion
+    if (description.length < 20) {
+        alert('La Descripcion debe tener al menos 20 caracteres.');
+        return false;
+    }
 
     // Validar image
     let regeximage = /.(jpg|jpeg|png|gif)$/i;
@@ -32,4 +32,4 @@ form.addEventListener('submit', (e) => {
     if (validarProduct()) {
         form.submit();
     }
-})
+});

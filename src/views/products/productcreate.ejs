@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head.ejs', { 
-    css: ["detalles.css", "partialsheaderfooter.css"], 
-    title: "Creación de producto" 
-}) %>
+<%- include('../partials/head.ejs', { css: ["detalles.css", "partialsheaderfooter.css" ], title: "Creación de producto"
+    }) %>
 
-<body>
-    <%- include('../partials/header') %>
+    <body>
+        <%- include('../partials/header') %>
 
-    <form method="POST" action="/productDetail/create" enctype="multipart/form-data">
+            <form class="formulario" method="POST" action="/productDetail/create" enctype="multipart/form-data">
 
-        <main class="card-wrapper">
-            <div class="card">
-                <!-- imagen del producto -->
-                <div class="product-img">
-                    <div class="img-display">
-                        <label for="input-image">
-                            <img src="/img/products/upload-image.png" alt="upload-image">
-                        </label>
-                        <input id="input-image" type="file" name="image">
-                        <% if (locals && locals.errors && errors.image) { %>
-                            <p class="msg_error"><%= errors.image.msg %></p>
-                        <% } %>
+                <main class="card-wrapper">
+                    <div class="card">
+                        <!-- imagen del producto -->
+                        <div class="product-img">
+                            <div class="img-display">
+                                <label for="input-image">
+                                    <img src="/img/products/upload-image.png" alt="upload-image">
+                                </label>
+                                <input id="input-image" type="file" name="image">
+                                <% if (locals && locals.errors && errors.image) { %>
+                                    <p class="msg_error">
+                                        <%= errors.image.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                        </div>
+                        <!-- informacion del producto -->
+                        <div class="product-content">
+                            <!-- titulo -->
+                            <h2 class="product-title">
+                                <input class="input-text" type="text" rows="3" id="name"
+                                    value="<%= locals.old?.name || '' %>" name="name"
+                                    placeholder="Titulo del producto"></input>
+                            </h2>
+                            <% if (locals && locals.errors && errors.name) { %>
+                                <p class="msg_error">
+                                    <%= errors.name.msg %>
+                                </p>
+                                <% } %>
+                                    <a href="#" class="product-link">Nashe</a>
+                                    <!-- precio -->
+                                    <div class="product-price">Precio:
+                                        $ <input class="input-text" type="number" name="price" placeholder="100000"
+                                            min="0" value="<%= locals.old?.price || '' %>">
+                                        <% if (locals && locals.errors && errors.price) { %>
+                                            <p class="msg_error">
+                                                <%= errors.price.msg %>
+                                            </p>
+                                            <% } %>
+                                    </div>
+                                    <div class="product-price">Descuento:
+                                        <input class="input-text" type="number" name="discount" placeholder="0-100"
+                                            min="0" max="100" value="<%= locals.old?.discount || '' %>">%
+                                    </div>
+                                    <!-- detalles -->
+                                    <div class="product-detail">
+                                        <h2>Descripción:</h2>
+                                        <p>
+                                            <textarea type="text" id="description" name="description" rows="3"
+                                                placeholder="Descripción del producto"><%= locals.old?.description || '' %></textarea>
+                                            <% if (locals && locals.errors && errors.description) { %>
+                                                <p class="msg_error">
+                                                    <%= errors.description.msg %>
+                                                </p>
+                                                <% } %>
+                                        </p>
+                                        <ul>
+                                            <li>Disponible: <span>En stock</span></li>
+                                            <li>
+                                                <label for="category">Categoria:</label>
+                                                <select id="category" name="category">
+                                                    <option value="Varios">Varios</option>
+                                                    <option value="Electrónica">Electrónica</option>
+                                                    <option value="Hardware">Hardware</option>
+                                                    <option value="Periféricos">Periféricos</option>
+                                                </select>
+                                            </li>
+                                            <li>Area de entrega: <span>Todo el país</span></li>
+                                            <li>Costo de envio: <span>Gratis</span></li>
+                                        </ul>
+                                    </div>
+
+
+                        </div>
+                        <div class="purchase-info">
+                            <button type="submit" class="btn">Subir</button>
+                        </div>
+
                     </div>
-                </div>
-                <!-- informacion del producto -->
-                <div class="product-content">
-                    <!-- titulo -->
-                    <h2 class="product-title">
-                        <input class="input-text" type="text" rows="3" value="<%= locals.old?.name || '' %>"
-                        name="name" placeholder="Titulo del producto" ></input>
-                    </h2>
-                    <% if (locals && locals.errors && errors.name) { %>
-                        <p class="msg_error"><%= errors.name.msg %></p>
-                    <% } %>
-                    <a href="#" class="product-link">Nashe</a>
-                    <!-- precio -->
-                    <div class="product-price">Precio:
-                        $ <input class="input-text" type="number" name="price" placeholder="100000" min="0" value="<%= locals.old?.price || '' %>">
-                        <% if (locals && locals.errors && errors.price) { %>
-                            <p class="msg_error"><%= errors.price.msg %></p>
-                        <% } %>
-                    </div>
-                    <div class="product-price">Descuento:
-                        <input class="input-text" type="number" name="discount" placeholder="0-100" min="0" max="100" value="<%= locals.old?.discount || '' %>">%
-                    </div>
-                    <!-- detalles -->
-                    <div class="product-detail">
-                        <h2>Descripción:</h2>
-                        <p>
-                            <textarea type="text" name="description"  rows="3"
-                            placeholder="Descripción del producto"><%= locals.old?.description || '' %></textarea>
-                            <% if (locals && locals.errors && errors.description) { %>
-                                <p class="msg_error"><%= errors.description.msg %></p>
-                            <% } %>
-                        </p>
-                        <ul>
-                            <li>Disponible: <span>En stock</span></li>
-                            <li>
-                                <label for="category">Categoria:</label>
-                                <select id="category" name="category">
-                                    <option value="Varios">Varios</option>
-                                    <option value="Electrónica">Electrónica</option>
-                                    <option value="Hardware">Hardware</option>
-                                    <option value="Periféricos">Periféricos</option>
-                                </select>
-                            </li>
-                            <li>Area de entrega: <span>Todo el país</span></li>
-                            <li>Costo de envio: <span>Gratis</span></li>
-                        </ul>
-                    </div>
-                    
 
-                </div>
-                <div class="purchase-info">
-                    <button type="submit" class="btn">Subir</button>
-                </div>
+                </main>
+            </form>
 
-            </div>
-
-        </main>
-    </form>
-
-    <%- include('../partials/footer') %>
-        <script src="/js/validateProduct.js"></script>
-</body>
+            <%- include('../partials/footer') %>
+                <script src="/js/validateProductCreate.js"></script>
+    </body>
 
 </html>

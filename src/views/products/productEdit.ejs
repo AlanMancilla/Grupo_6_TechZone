@@ -1,99 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head.ejs', { 
-    css: ["detalles.css", "partialsheaderfooter.css"], 
-    title: "Edición de producto" 
-}) %>
+<%- include('../partials/head.ejs', { css: ["detalles.css", "partialsheaderfooter.css" ], title: "Edición de producto"
+    }) %>
 
-<body>
-    <%- include('../partials/header') %>
+    <body>
+        <%- include('../partials/header') %>
 
-        <form method="POST" action="/productDetail/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
-            
-            <main class="card-wrapper">
-                <div class="card">
-                    <div class="product-img">
-                        <div class="img-display">
-                            <label>
-                                <div class="img-showcase">
-                                    <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
-                                </div>
-                                <input id="input-image" type="file" name="image">
-                                <% if (locals && locals.errors && errors.image) { %>
-                                    <p class="msg_error"><%= errors.image.msg %></p>
+            <form class="formulario" method="POST" action="/productDetail/<%= product.id %>?_method=PUT"
+                enctype="multipart/form-data">
+
+                <main class="card-wrapper">
+                    <div class="card">
+                        <div class="product-img">
+                            <div class="img-display">
+                                <label>
+                                    <div class="img-showcase">
+                                        <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
+                                    </div>
+                                    <input id="input-image" type="file" name="image">
+                                    <% if (locals && locals.errors && errors.image) { %>
+                                        <p class="msg_error">
+                                            <%= errors.image.msg %>
+                                        </p>
+                                        <% } %>
+                                </label>
+                                <input style="display: none;" id="image_edit" type="text" name="image_edit"
+                                    value="<%= product.image %>">
+                            </div>
+
+                        </div>
+                        <div class="product-content">
+                            <h2 class="product-title">
+                                <input class="input-text" type="text" id="name" name="name" required
+                                    value="<%= product.name %>"></input>
+                            </h2>
+                            <% if (locals && locals.errors && errors.name) { %>
+                                <p class="msg_error">
+                                    <%= errors.name.msg %>
+                                </p>
                                 <% } %>
-                            </label>
-                            <input style="display: none;" id="image_edit" type="text" name="image_edit" value="<%= product.image %>">
+                                    <a href="#" class="product-link">Nashe</a>
+                                    <div class="product-price">
+                                        <p class="product-price">Precio: <span> <input class="input-text" type="number"
+                                                    id="precio" name="price" value="<%= product.price %>"> </span>
+                                            <% if (locals && locals.errors && errors.price) { %>
+                                                <p class="msg_error">
+                                                    <%= errors.price.msg %>
+                                                </p>
+                                                <% } %>
+                                        </p>
+                                        <p>
+                                            Descuento: <input class="input-text" type="number" name="discount"
+                                                placeholder="descuento. no es necesario" min="0" max="100"
+                                                value="<%= product.discount %>"> %
+                                        </p>
+                                    </div>
+                                    <div class="product-detail">
+                                        <h2>Descripcion</h2>
+                                        <p>
+                                            <textarea name="description"
+                                                id="description"><%= product.description %></textarea>
+                                            <% if (locals && locals.errors && errors.description) { %>
+                                                <p class="msg_error">
+                                                    <%= errors.description.msg %>
+                                                </p>
+                                                <% } %>
+                                        </p>
+                                        <ul>
+                                            <li>Disponible: <span>En stock</span></li>
+                                            <li>Categoria: <span>
+                                                    <select id="category" name="category">
+                                                        <option value="Varios" <% if (product.category==='Varios' ) { %>
+                                                            selected<% } %>>Varios</option>
+                                                        <option value="Electronica" <% if
+                                                            (product.category==='Electronica' ) { %>selected<% } %>
+                                                                >Electrónica</option>
+                                                        <option value="Hardware" <% if (product.category==='Hardware' )
+                                                            { %>selected<% } %>>Hardware</option>
+                                                        <option value="Perifericos" <% if
+                                                            (product.category==='Perifericos' ) { %>selected<% } %>
+                                                                >Periféricos</option>
+                                                    </select>
+                                                </span></li>
+                                            <li>Area de entrega: <span>Todo el país</span></li>
+                                            <li>Costo de envio: <span>Gratis</span></li>
+                                        </ul>
+                                    </div>
                         </div>
 
-                    </div>
-                    <div class="product-content">
-                        <h2 class="product-title">
-                            <input class="input-text" type="text" id="name" name="name"
-                            required value="<%= product.name %>"></input>
-                        </h2>
-                        <% if (locals && locals.errors && errors.name) { %>
-                            <p class="msg_error"><%= errors.name.msg %></p>
-                        <% } %>
-                        <a href="#" class="product-link">Nashe</a>
-                        <div class="product-price">
-                            <p class="product-price">Precio: <span> <input class="input-text" type="number" id="precio"
-                                        name="price" value="<%= product.price %>"> </span>
-                            <% if (locals && locals.errors && errors.price) { %>
-                                <p class="msg_error"><%= errors.price.msg %></p>
-                            <% } %></p>
-                            <p>
-                                Descuento: <input class="input-text" type="number" name="discount" placeholder="descuento. no es necesario" min="0" max="100" value="<%= product.discount %>"> %
-                            </p>
+                        <div class="purchase-info">
+                            <button type="submit" class="btn">Guardar</button>
                         </div>
-                        <div class="product-detail">
-                            <h2>Descripcion</h2>
-                            <p>
-                                <textarea name="description" id="description"><%= product.description %></textarea>
-                                <% if (locals && locals.errors && errors.description) { %>
-                                    <p class="msg_error"><%= errors.description.msg %></p>
-                                <% } %>
-                            </p>
-                            <ul>
-                                <li>Disponible: <span>En stock</span></li>
-                                <li>Categoria: <span>
-                                        <select id="category" name="category" >
-                                            <option value="Varios" <% if (product.category === 'Varios') { %>selected<% } %>>Varios</option>
-                                            <option value="Electronica" <% if (product.category === 'Electronica') { %>selected<% } %>>Electrónica</option>
-                                            <option value="Hardware" <% if (product.category === 'Hardware') { %>selected<% } %>>Hardware</option>
-                                            <option value="Perifericos" <% if (product.category === 'Perifericos') { %>selected<% } %>>Periféricos</option>
-                                        </select>
-                                    </span></li>
-                                <li>Area de entrega: <span>Todo el país</span></li>
-                                <li>Costo de envio: <span>Gratis</span></li>
-                            </ul>
+
+                        <div class="social-links">
+                            <p>Compartir en:</p>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="purchase-info">
-                        <button type="submit" class="btn">Guardar</button>
-                    </div>
+                </main>
 
-                    <div class="social-links">
-                        <p>Compartir en:</p>
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </main>
-
-            <%- include('../partials/footer') %>
-            <script src="/js/validateProduct.js"></script>
-</body>
+                <%- include('../partials/footer') %>
+                    <script src="/js/validateProductEdit.js"></script>
+    </body>
