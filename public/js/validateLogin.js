@@ -10,11 +10,12 @@ function validarLogin() {
     }
 
     // Validar contraseña
-    let regexPassword = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if (!regexPassword.test(password)) {
         alert("La contraseña es obligatoria.");
-        return true;
+        return false;
     }
+    return true;
 }
 
 const form = document.querySelector(".formulario");
