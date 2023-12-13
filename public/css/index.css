@@ -45,7 +45,6 @@ a {
 
 .slider {
    display: flex;
-   aspect-ratio: 150/53;
    width: 100%;
    position: relative;
    overflow: scroll hidden;
