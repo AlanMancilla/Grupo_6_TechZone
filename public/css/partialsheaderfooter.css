@@ -42,6 +42,14 @@
     font-size: 1.5rem;
 }
 
+.max-width{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.header-top-bg{
+    background-color: #37373f;
+}
 
 /* header */
 
@@ -53,10 +61,9 @@
 }
 
 .header-top {
-    padding: 5px;
+    padding: 5px 0;
     display: flex;
     justify-content: space-around;
-    background-color: #37373f;
     align-items: center;
 }
 
@@ -73,33 +80,7 @@
 }
 
 .search-group {
-    border-radius: 8px;
-    position: relative;
-    display: none;
-}
-
-.search {
-    width: 40vw;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
-
-}
-
-.search:focus {
-    outline: var(--azul) 2px solid;
-}
-
-.search-group i {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: var(--blanco);
-    color: var(--negro);
-    font-size: 18px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border-left: var(--grisClaro) solid 1px;
+    display: none;    
 }
 
 .avatar-header{
@@ -127,6 +108,17 @@
     display: none;
 }
 
+.nav-drop{
+    padding: 0 15px !important;
+}
+.nav-drop a:hover{
+    color: var(--blanco);
+}
+
+.nav-drop-toggle{
+    background-color: #c7c7c7 !important;
+}
+
 .log-dropdown:hover{
     background-color: var(--gris-oscuro);
 }
@@ -140,6 +132,7 @@
     background-color: var(--gris-oscuro);
     width: 100%;
     padding: 5px;
+    z-index: 3;
 }
 
 /* .login-register {
@@ -151,6 +144,7 @@
     flex-direction: row;
     align-items: center;
     z-index: 1;
+    padding-right: 5px;
     gap: 7px;
 }
 
@@ -177,25 +171,7 @@
     display: none;
 }
 
-.header-nav li {
-    padding: 15px;
-}
-
-.header-nav li:hover {
-    background-color: #c7c7c7;
-}
-
 /* footer */
-.terms {
-    display: none;
-    margin: 0;
-    padding: 5px;
-    color: var(--negro);
-}
-
-.terms li {
-    padding: 10px;
-}
 
 .footer-contact {
     padding: 10px;
@@ -215,7 +191,7 @@
 
     .header-top {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
     }
 
@@ -236,31 +212,62 @@
     }
 
     .search-group {
-        display: block;
+        display: flex;
+        width: 40%;
+        height: 2rem;
+    }
+
+    .search {
+        flex: 1;
+        height: 100%;
+        padding: 8px 12px;
+        border-radius: 8px 0 0 8px;
+        border: none;
+    }
+
+    .search:focus {
+        outline: var(--azul) 2px solid;
+    }
+
+    .search-button{
+        width: 3rem;
+        height: 100%;
+        border: none;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .search-group i {
+        color: var(--negro);
+        font-size: 18px;
     }
 
     .cart-text {
         display: inline;
     }
 
-    /* footer */
-
-    .terms {
-        display: flex;
-        justify-content: space-around;
+    .header-nav li{
+        padding: 15px 0;
     }
+
+    .header-nav li a{
+        padding: 15px;
+        color: var(--negro);
+    }
+    
+    .header-nav li:hover {
+        background-color: #c7c7c7;
+    }
+
+    /* footer */
 
     .footer-contact {
         flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
     }
 
     .footer-contact div {
-        width: 30vw;
-    }
-
-    .footer-contact{
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: start;
+        width: fit-content;
     }
 }

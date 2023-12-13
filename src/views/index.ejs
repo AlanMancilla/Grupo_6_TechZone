@@ -13,9 +13,9 @@
             <div class="slider-wrapper">
                 <div class="slider">
                     <img id="slide-1" src="../img/banner.png" />
-                    <img id="slide-2" src= "../img/mwe750-fullrange-v2-1920x500-d3.png" />
-                    <img id="slide-3" src= "../img/MONITORES-ASUS-Precio-Calidad-1920x500-1.png" />
-                    <img id="slide-4" src= "../img/VGA-SERIE-RTX40-GAMING-CITY-1920x500-1.png" />
+                    <img id="slide-2" src= "../img/mwe750-fullrange-v2-1920x500-d3.jpg" />
+                    <img id="slide-3" src= "../img/MONITORES-ASUS-Precio-Calidad-1920x500-1.jpg" />
+                    <img id="slide-4" src= "../img/VGA-SERIE-RTX40-GAMING-CITY-1920x500-1.jpg" />
                 </div>
                 <div class="slider-nav">
                     <a href="#"></a>
@@ -36,11 +36,13 @@
                                 <img src="/img/products/<%= product.image %>" alt="imagen de producto" loading="lazy">
                             </figure>
                             <div>
-                                <div class="precio"> $<%= product.price %> </div>
                                 <% if (product.discount && product.discount > 0) { %>
-                                    <span class="descuento"><%= product.discount %> % OFF</span>
+                                    <div><span class="price discount-number">$<%= Number(product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span> <span class="price">$<%= Number(product.price - (product.discount / 100) * product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span></div>
+                                    <span class="discount"><%= product.discount %> % OFF</span>
+                                <% } else { %>    
+                                    <div class="price"> $<%= product.price %> </div>
                                 <% } %>
-                                <p class="descripciones"><%= product.name %></p>
+                                <p class="description"><%= product.name %></p>
                             </div>
                         </article>
                     </a>

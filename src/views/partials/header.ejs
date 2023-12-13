@@ -1,66 +1,75 @@
 <header class="header-footer">
     <div class="contact">
-        <a href="#">contact</a>
+            <div class="max-width">
+            <a href="#">contact</a>
+        </div>
     </div>
-    <div class="header-top">
-        <span class="burger-menu">
-            <i class="fa-solid fa-bars"></i>
-        </span>
-        <a href="/">
-            <img class="logo" src="/img/logotz_Mesadetrabajo_1.png" alt="Logo TechZone"></img>
-        </a>
-        
-        <form class="search-group" action="/productDetail/search" method="GET">
-                <input class="search" type="text" id="search" name="search">
-                <button>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-        </form>
+    <div class="header-top-bg">
+        <div class="header-top max-width">
+            <span class="burger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+            <a href="/">
+                <img class="logo" src="/img/logotz_Mesadetrabajo_1.png" alt="Logo TechZone"></img>
+            </a>
             
-        <div class="log-cart">
-            <% if (locals.isLogged) { %>
-                <div class="log-dropdown">
-                    <img src="/img/users/<%= locals.userLogged.avatar %>" alt="avatar-profile" class="avatar-header">
-                    <!-- <span class="login-icon"><i class="fa-solid fa-address-card"></i></span> -->
-                    <span><%= locals.userLogged.name %> <%= locals.userLogged.last_name %></span>
-                    <div class="log-dropdown-toggle">
-                        <a href="/users/profile">Mi perfil</a>
-                        <a href="/users/logout">Cerrar Sesion</a>
+            <form class="search-group" action="/productDetail/search" method="GET">
+                    <input class="search" type="text" id="search" name="search">
+                    <button class="search-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+            </form>
+                
+            <div class="log-cart">
+                <% if (locals.isLogged) { %>
+                    <div class="log-dropdown">
+                        <img src="/img/users/<%= locals.userLogged.avatar %>" alt="avatar-profile" class="avatar-header">
+                        <!-- <span class="login-icon"><i class="fa-solid fa-address-card"></i></span> -->
+                        <span><%= locals.userLogged.name %> <%= locals.userLogged.last_name %></span>
+                        <div class="log-dropdown-toggle">
+                            <a href="/users/profile">Mi perfil</a>
+                            <a href="/users/logout">Cerrar Sesion</a>
+                        </div>
                     </div>
-                </div>
-            <% } else { %>
-                <div class="login-register">
-                    <a href="/users/login">
-                        <span>login /</span>
-                    </a>
-                    <a href="/users/register">
-                        <span>register</span>
-                    </a>
-                </div>
-            <% } %>
-            <a class="cart" href="/productCart">
-                <span class="cart-icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <div class="cart-text">
-                    carrito
-                </div>
-            </a>            
+                <% } else { %>
+                    <div class="login-register">
+                        <a href="/users/login">
+                            <span>login /</span>
+                        </a>
+                        <a href="/users/register">
+                            <span>register</span>
+                        </a>
+                    </div>
+                <% } %>
+                <a class="cart" href="/productCart">
+                    <span class="cart-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </span>
+                    <div class="cart-text">
+                        carrito
+                    </div>
+                </a>            
 
+            </div>
         </div>
     </div>
 
 
     <nav>
         <ul class="header-nav">
-            <li>Categorias</li>
-            <li>PCs de Escritorio</li>
-            <li>Notebooks</li>
-            <li>Placas de Video</li>
-            <li>Monitores</li>
-            <li>Micros</li>
-            <li>¡Imperdibles!</li>
-            <!-- otro dia con mas calma <li>|Armá tu PC|</li> -->
+            <li class="log-dropdown nav-drop"><a href="/productDetail/">Categorias \/</a>
+                <ul class="log-dropdown-toggle nav-drop-toggle">
+                    <li><a href="/productDetail/search?search=Electronica">Electronica</a></li>
+                    <li><a href="/productDetail/search?search=Hardware">Hardware</a></li>
+                    <li><a href="/productDetail/search?search=perifericos">perifericos</a></li>
+                </ul>
+            </li>
+            <li><a href="/productDetail/search?search=Notebook">PCs de Escritorio</a></li>
+            <li><a href="/productDetail/search?search=Notebook">Notebooks</a></li>
+            <li><a href="/productDetail/search?search=Placa%20de%20video">Placas de Video</a></li>
+            <li><a href="/productDetail/search?search=Monitores">Monitores</a></li>
+            <li><a href="/productDetail/search?search=Microprocesador">Micros</a></li>
+            <li><a href="/">¡Imperdibles!</a></li>
         </ul>
     </nav>
 
