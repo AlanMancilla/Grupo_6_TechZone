@@ -1,184 +1,131 @@
 /*Estilos globales*/
 * {
-   font-family: 'Quicksand', sans-serif;
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-   background-color: var(--blanco);
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-   justify-content: space-between;
+  background-color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 
 h2 {
-   font-size: 40px;
+  font-size: 40px;
 }
 
 h4 {
-   font-size: 28px;
-   color: var(--verde);
+  font-size: 28px;
+  color: var(--verde);
 }
 
 p {
-   font-size: 20px;
+  font-size: 20px;
 }
 
 li {
-   list-style: none;
+  list-style: none;
 }
 
-a{
-   color: var(--gris);
-   text-decoration: none;
+a {
+  color: var(--gris);
+  text-decoration: none;
 }
 
 .slider-wrapper {
-   display: none;
-   position: relative;
-   max-width: 1400px;
-   margin: auto;
+  display: none;
+  position: relative;
+  max-width: 1400px;
+  margin: auto;
 }
 
 .slider {
-
-   display: flex;
-   aspect-ratio: 150/53;
-   width: 100%;
-   position: relative;
-   overflow: scroll hidden;
-   scroll-snap-type: x mandatory;
-   
-   /* display: flex;
-   overflow-x: auto;
-   scroll-snap-type: x mandatory;
-   scroll-behavior: smooth;
-   box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-   -ms-overflow-style: none;
-   scrollbar-width: none;
-   min-width: 100%;
-   height: 440px; */
+  display: flex;
+  aspect-ratio: 150/53;
+  width: 100%;
+  position: relative;
+  overflow: scroll hidden;
+  scroll-snap-type: x mandatory;
 }
-
-/* 
-.slider::-webkit-scrollbar {
-   display: none;
-} */
 
 .slider img {
-
-   width: 100%;
-   min-width: 100%;
-   left: 0;/* 
-   position: sticky; */
-   object-fit: cover;
-   scroll-snap-align: center ;
-
-   /* flex: 1 0 100%;
-   scroll-snap-align: start;
-   object-fit: cover; */
+  width: 100%;
+  min-width: 100%;
+  left: 0;
+  object-fit: contain;
+  scroll-snap-align: center;
 }
 
-/* .slider-nav {
-   display: flex;
-   column-gap: 1rem;
-   position: absolute;
-   bottom: 1.25rem;
-   left: 50%;
-   transform: translateX(-50%);
-   z-index: 1;
-}
-
-.slider-nav a {
-   width: 0.5rem;
-   height: 0.5rem;
-   border-radius: 50%;
-   background-color: #fff;
-   opacity: 0.75;
-   transition: opacity ease 250ms;
-}
-
-.slider-nav a:hover {
-   opacity: 1;
-}
-
-#slide-1 {
-   width: 100%;
-} */
-
-.products-view{
-   max-width: 1400px;
-   margin: auto;
+.products-view {
+  max-width: 1400px;
+  margin: auto;
 }
 
 .products {
-   max-width: 1400px;
-   background-color: var(--grisClaro);
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-   gap: 16px;
-   padding: 20px;
-   justify-items: center;
+  max-width: 1400px;
+  background-color: var(--grisClaro);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  justify-items: center;
 }
 
-.products a{
-   width: 100%;
+.products a {
+  width: 100%;
 }
 
 .products article {
-   min-width: 135px;
-   background-color: var(--blanco);
-   border-radius: 10px;
-   height: 100%;
-   padding: 5px;
+  min-width: 135px;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  height: 100%;
+  padding: 5px;
 }
 
 .image-container {
-   
-   margin: auto;
+  margin: auto;
 }
 
 .products article img {
-   width: 100%;
-   background-color: var(--gris);
+  width: 100%;
+  background-color: var(--blanco);
 }
 
 .precio {
-   font-size: 24px;
-   font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .descuento {
-   background-color: var(--verde);
-   color: var(--negro);
-   border-radius: 8px;
-   padding: 1px 4px;
+  background-color: var(--verde);
+  color: var(--negro);
+  border-radius: 8px;
+  padding: 1px 4px;
 }
 
 .descripciones {
-   overflow-wrap: break-word;
-   color: var(--gris);
-   text-align: center;
+  overflow-wrap: break-word;
+  color: var(--gris);
+  text-align: center;
 }
 
 .footer-contact p {
-   color: var(--blanco);
+  color: var(--blanco);
 }
 
-@media (min-width:500px) {
-   
+@media (min-width: 500px) {
 }
 
-@media (min-width:770px) {
+@media (min-width: 770px) {
+  /* main */
 
-   /* main */
-
-   .slider-wrapper {
-      display: block;
-      position: relative;
-   }
-
+  .slider-wrapper {
+    display: block;
+    position: relative;
+  }
 }
