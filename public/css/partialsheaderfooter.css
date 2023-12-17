@@ -96,54 +96,19 @@
   font-size: 25px;
 }
 
-.log-dropdown {
-  position: relative;
-  padding: 7px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
+.header-nav{
+  position: absolute;
+  background-color: #37373f;
 }
 
-.log-dropdown-toggle {
-  display: none;
+.header-nav li{
+  color: #000;
+  padding: 10px;
 }
 
-.nav-drop{
-    padding: 0 15px !important;
-}
-.nav-drop a:hover {
-    color: var(--blanco);
-}
-
-.nav-drop-toggle{
-    background-color: #c7c7c7 !important;
-}
-
-.nav-drop{
-    padding: 0 15px !important;
-}
-.nav-drop a:hover{
-    color: var(--blanco);
-}
-
-.nav-drop-toggle{
-    background-color: #c7c7c7 !important;
-}
-
-.log-dropdown:hover {
-  background-color: var(--gris-oscuro);
-}
-
-.log-dropdown:hover .log-dropdown-toggle{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--gris-oscuro);
-    width: 100%;
-    padding: 5px;
-    z-index: 3;
+.header-nav a{
+  color: #000;
+  padding: 10px;
 }
 
 /* .login-register {
@@ -211,11 +176,63 @@
   }
 
   .header-nav {
+    position: relative;
+    background-color: #e7e7e7;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: auto;
+  }
+
+  .log-dropdown {
+    position: relative;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  
+  .log-dropdown-toggle {
+    display: none;
+  }
+  
+  .nav-drop{
+      padding: 0 15px !important;
+  }
+  .nav-drop a:hover {
+      color: var(--blanco);
+  }
+  
+  .nav-drop-toggle{
+      background-color: #c7c7c7 !important;
+  }
+  
+  .nav-drop{
+      padding: 0 15px !important;
+  }
+  .nav-drop a:hover{
+      color: var(--blanco);
+  }
+  
+  .nav-drop-toggle{
+      background-color: #c7c7c7 !important;
+  }
+  
+  .log-dropdown:hover {
+    background-color: var(--gris-oscuro);
+  }
+  
+  .log-dropdown:hover .log-dropdown-toggle{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--gris-oscuro);
+      width: 100%;
+      padding: 5px;
+      z-index: 3;
   }
 
   .burger-menu {

@@ -51,12 +51,10 @@
                         Añadir al carrito <i class="fa fa-shopping-cart"></i>
                     </button>
                     <button type="button" class="btn">Comprar</button>
-                    <% if (product) { %>
+                    <% if (locals.isLogged && locals.userLogged.role === 'Admin' ) { %>
                         <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
                             <button type="submit" class="btn">borrar</button>
                         </form>
-                    <% } %>
-                    <% if (product) { %>
                         <form action="/productDetail/<%= product.id %>/edit" method="get">
                             <button type="submit" class="btn">Editar</button>
                         </form>

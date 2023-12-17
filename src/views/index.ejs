@@ -15,14 +15,13 @@
                             <img id="slide-4" src="/img/VGA-SERIE-RTX40-GAMING-CITY-1920x500-1.jpg" />
                         </div>
                         <div class="slider-nav">
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
+                            <button onclick="prevSlide()"><i class="fa-solid fa-arrow-right fa-rotate-180"></i></button>
+                            <button onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </section>
 
-        <section class="products-view">
+        <section class="max-w">
             <h2>Productos</h2>
     
             <section class="products">
@@ -37,7 +36,7 @@
                                     <div><span class="price discount-number">$<%= Number(product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span> <span class="price">$<%= Number(product.price - (product.discount / 100) * product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span></div>
                                     <span class="discount"><%= product.discount %> % OFF</span>
                                 <% } else { %>    
-                                    <div class="price"> $<%= product.price %> </div>
+                                    <div class="price"> $<%= Number(product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %> </div>
                                 <% } %>
                                 <p class="description"><%= product.name %></p>
                             </div>
@@ -52,5 +51,6 @@
 
             <%- include('./partials/footer') %>
     </body>
+    <script src="/js/slider.js"></script>
 
 </html>

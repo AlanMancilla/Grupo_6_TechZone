@@ -11,37 +11,38 @@
 
     <main>
 
-        <div>
+        <div class="max-w">
             <aside class="search-filter">
                 <ul> <h3>Categorias:</h3>
                     <li><a href="/productDetail/search?search=Electronica">Electronica</a></li>
                     <li><a href="/productDetail/search?search=Hardware">Hardware</a></li>
                     <li><a href="/productDetail/search?search=Perifericos">Perifericos</a></li>
-                    <li><a href="/productDetail/search?search=Varios">Varios</a></li>
                 </ul>
                 <ul>
                     <li><a href="/productDetail/search?search=Microprocesador"><h3>Microprocesadores</h3></a></li>
                     <li><a href="/productDetail/search?search=Placa%20de%20video"><h3>Placas de video</h3></a></li>
                     <li><a href="/productDetail/search?search=Notebook"><h3>Notebooks</h3></a></li>
-                    <li><a href="/productDetail/search?search=Monitores"><h3>Monitores</h3></a></li>
+                    <li><a href="/productDetail/search?search=Monitor"><h3>Monitores</h3></a></li>
                     <li><a href="/productDetail/search?search=Pc"><h3>Pc</h3></a></li>
                 </ul>
-                <form action="/search" method="GET">
+                <!-- <form action="/search" method="GET">
                     <label for="priceRange">Rango de precios:</label>
                     <input type="range" name="priceRange" id="priceRange" min="0" max="1000000" value="1000000" step="1" />
                     
                     <output for="priceRange" id="priceOutput">0</output>
                     
                     <button type="submit">Buscar</button>
-                 </form>
+                 </form> -->
             </aside>
         
-            <section class="products-view">
+            <section class="max-w list">
                 
                 <h2>Resultados</h2>
-                <a href="/productDetail/create">
-                    <div class="cart">Create</div>
-                </a>
+                <% if (locals.isLogged && locals.userLogged.role === 'Admin' ) { %>
+                    <a href="/productDetail/create">
+                        <div class="cart">Create</div>
+                    </a>
+                <% } %>
                 <section class="products">
                     <% products.forEach(product => { %>
                         <a href="/productDetail/<%= product.id %>">
@@ -50,22 +51,26 @@
                                     <img src="/img/products/<%= product.image %>" alt="imagen de producto" loading="lazy">
                                 </figure>
                                 <div>
-                                    <div class="precio"> $<%= product.price %> </div>
                                     <% if (product.discount && product.discount > 0) { %>
-                                        <span class="descuento"><%= product.discount %> % OFF</span>
+                                        <div><span class="price discount-number">$<%= Number(product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span> <span class="price">$<%= Number(product.price - (product.discount / 100) * product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span></div>
+                                        <span class="discount"><%= product.discount %> % OFF</span>
+                                    <% } else { %>    
+                                        <div class="price"> $<%= Number(product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %> </div>
                                     <% } %>
                                     <p class="descripciones"><%= product.name %></p>
                                 </div>
-                                <form action="/productDetail/<%= product.id %>/edit" method="GET">
-                                    <button type="submit" class="btn">Editar</button>
-                                </form>
-                                <details>
-                                    <summary>Borrar</summary>
-                                    seguro que quiere borrar
-                                    <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
-                                    <button type="submit" class="btn">Borrar</button>
+                                <% if (locals.isLogged && locals.userLogged.role === 'Admin' ) { %>
+                                    <form action="/productDetail/<%= product.id %>/edit" method="GET">
+                                        <button type="submit" class="btn">Editar</button>
                                     </form>
-                                </details>
+                                    <details>
+                                        <summary>Borrar</summary>
+                                        seguro que quiere borrar
+                                        <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn">Borrar</button>
+                                        </form>
+                                    </details>
+                                    <% } %>
                             </article>
                         </a>
                     <% }) %>
@@ -73,34 +78,6 @@
 
             </section>
         </div>
-        <!-- <section class="list">
-            <% products.forEach(product => { %>
-                <a class="list-product" href="/productDetail/<%= product.id %>">
-                    <article>
-                        <figure class="list-image-container">
-                            <img class="list-img" src="/img/products/<%= product.image %>" alt="imagen de producto" loading="lazy"></img>
-                        </figure>
-                        <span>
-                           <div class="precio"> $<%= product.price %> </div>
-                           <% if (product.discount && product.discount > 0) { %>
-                              <span class="descuento"><%= product.discount %> % OFF</span>
-                           <% } %>
-                           <p class="descripciones"><%= product.name %></p>
-                        </span>
-                        <form action="/productDetail/<%= product.id %>/edit" method="GET">
-                           <button type="submit" class="btn">Editar</button>
-                        </form>
-                        <details>
-                           <summary>Borrar</summary>
-                           seguro que quiere borrar
-                           <form action="/productDetail/<%= product.id %>?_method=DELETE" method="POST">
-                              <button type="submit" class="btn">Borrar</button>
-                           </form>
-                        </details>
-                    </article>
-                </a>
-            <% }) %>
-        </section> -->
 
     </main>
 
