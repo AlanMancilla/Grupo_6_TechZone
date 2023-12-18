@@ -26,8 +26,10 @@ textarea {
 }
 
 .product-img {
+  position: relative;
   width: 70%;
   margin: auto;
+  height: fit-content;
 }
 
 img {
@@ -48,6 +50,17 @@ img {
 
 .img-showcase img {
   min-width: 100%;
+}
+
+#guide-image {
+  width: 100%; /* Ajusta el ancho según sea necesario */
+  height: auto;
+}
+
+#preview-image {
+  z-index: 1;
+  width: 100%;
+  height: auto;
 }
 
 .product-content {
@@ -224,6 +237,17 @@ img {
   border-radius: 5px;
   font-weight: bold;
   font-size: 1rem !important;
+}
+
+.validationMessage {
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.valid {
+  color: green;
 }
 
 @media screen and (min-width: 992px) {

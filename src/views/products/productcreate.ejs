@@ -15,14 +15,17 @@
                         <div class="product-img">
                             <div class="img-display">
                                 <label for="input-image">
-                                    <img src="/img/products/upload-image.png" alt="upload-image">
+                                    <img id="preview-image" alt="Imagen a subir">
+                                    <img id="guide-image" src="/img/products/upload-image.png" alt="upload-image">
                                 </label>
                                 <input id="input-image" type="file" name="image">
+                                <div id="productImageValidation" class="validationMessage"></div>
+                                
                                 <% if (locals && locals.errors && errors.image) { %>
                                     <p class="msg_error">
                                         <%= errors.image.msg %>
                                     </p>
-                                    <% } %>
+                                <% } %>
                             </div>
                         </div>
                         <!-- informacion del producto -->
@@ -33,53 +36,57 @@
                                     value="<%= locals.old?.name || '' %>" name="name"
                                     placeholder="Titulo del producto"></input>
                             </h2>
+                            <div id="productNameValidation" class="validationMessage"></div>
                             <% if (locals && locals.errors && errors.name) { %>
                                 <p class="msg_error">
                                     <%= errors.name.msg %>
                                 </p>
+                            <% } %>
+                            <a href="#" class="product-link">Nashe</a>
+                            <!-- precio -->
+                            <div class="product-price">Precio:
+                                $ <input id="price" class="input-text" type="number" name="price" placeholder="100000"
+                                    min="0" value="<%= locals.old?.price || '' %>">
+                                <% if (locals && locals.errors && errors.price) { %>
+                                    <p class="msg_error">
+                                        <%= errors.price.msg %>
+                                    </p>
                                 <% } %>
-                                    <a href="#" class="product-link">Nashe</a>
-                                    <!-- precio -->
-                                    <div class="product-price">Precio:
-                                        $ <input class="input-text" type="number" name="price" placeholder="100000"
-                                            min="0" value="<%= locals.old?.price || '' %>">
-                                        <% if (locals && locals.errors && errors.price) { %>
-                                            <p class="msg_error">
-                                                <%= errors.price.msg %>
-                                            </p>
-                                            <% } %>
-                                    </div>
-                                    <div class="product-price">Descuento:
-                                        <input class="input-text" type="number" name="discount" placeholder="0-100"
-                                            min="0" max="100" value="<%= locals.old?.discount || '' %>">%
-                                    </div>
-                                    <!-- detalles -->
-                                    <div class="product-detail">
-                                        <h2>Descripción:</h2>
-                                        <p>
-                                            <textarea type="text" id="description" name="description" rows="3"
-                                                placeholder="Descripción del producto"><%= locals.old?.description || '' %></textarea>
-                                            <% if (locals && locals.errors && errors.description) { %>
-                                                <p class="msg_error">
-                                                    <%= errors.description.msg %>
-                                                </p>
-                                                <% } %>
+                            </div>
+                            <div id="productPriceValidation" class="validationMessage"></div>
+
+                            <div class="product-price">Descuento:
+                                <input class="input-text" type="number" name="discount" placeholder="0-100"
+                                    min="0" max="100" value="<%= locals.old?.discount || '' %>">%
+                            </div>
+                            <!-- detalles -->
+                            <div class="product-detail">
+                                <h2>Descripción:</h2>
+                                <p>
+                                    <textarea type="text" id="description" name="description" rows="3"
+                                        placeholder="Descripción del producto"><%= locals.old?.description || '' %></textarea>
+                                    <% if (locals && locals.errors && errors.description) { %>
+                                        <p class="msg_error">
+                                            <%= errors.description.msg %>
                                         </p>
-                                        <ul>
-                                            <li>Disponible: <span>En stock</span></li>
-                                            <li>
-                                                <label for="category">Categoria:</label>
-                                                <select id="category" name="category">
-                                                    <option value="Varios">Varios</option>
-                                                    <option value="Electrónica">Electrónica</option>
-                                                    <option value="Hardware">Hardware</option>
-                                                    <option value="Periféricos">Periféricos</option>
-                                                </select>
-                                            </li>
-                                            <li>Area de entrega: <span>Todo el país</span></li>
-                                            <li>Costo de envio: <span>Gratis</span></li>
-                                        </ul>
-                                    </div>
+                                    <% } %>
+                                </p>
+                                <div id="productDescriptionValidation" class="validationMessage"></div>
+                                <ul>
+                                    <li>Disponible: <span>En stock</span></li>
+                                    <li>
+                                        <label for="category">Categoria:</label>
+                                        <select id="category" name="category">
+                                            <option value="Varios">Varios</option>
+                                            <option value="Electrónica">Electrónica</option>
+                                            <option value="Hardware">Hardware</option>
+                                            <option value="Periféricos">Periféricos</option>
+                                        </select>
+                                    </li>
+                                    <li>Area de entrega: <span>Todo e   l país</span></li>
+                                    <li>Costo de envio: <span>Gratis</span></li>
+                                </ul>
+                            </div>
 
 
                         </div>

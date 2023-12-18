@@ -103,6 +103,11 @@ a {
 .products article img {
   width: 100%;
   background-color: var(--blanco);
+  transition: all 1s;
+  border-radius: 10px;
+}
+.products article:hover img {
+  scale: 1.05;
 }
 
 .price {
