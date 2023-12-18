@@ -25,10 +25,21 @@
                         <%= product.name || '404' %>
                     </h2>
                     <a href="#" class="product-link">Nashe</a>
-                    <div class="product-price">
-                        <p class="product-price">Precio: $ <span><%= product.price || '404' %></span></p>
-                        <p>Descuento: <%= product.discount %>%</p>
-                    </div>
+                    <!-- <div class="product-price">
+                        <p class="product-price">Precio: $ <span class="price"><%= product.price || '404' %></span></p>
+                        <p>Descuento: <span class="discount" ><%= product.discount %> %</span></p>
+                    </div> -->
+                    <% if (product.discount && product.discount > 0) { %>
+                        <p class="product-price">Precio: </span>
+                            <span class="price discount-number">$<%= Number(product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span> <span class="price">$<%= Number(product.price - (product.discount / 100) * product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %></span>
+                        </p>
+                        <p>Descuento: <span class="discount"><%= product.discount %> % OFF</span></p>
+                        
+                    <% } else { %>  
+                        <p class="product-price">Precio: </span>  
+                            <span class="price"> $<%= Number(product.price).toLocaleString("de-DE", { style: "currency", currency: "ARS" }) %> </span>
+                        </p>
+                    <% } %>
                     <div class="product-detail">
                         <h2>Descripción:</h2>
                         <p>

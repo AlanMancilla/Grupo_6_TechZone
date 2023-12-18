@@ -18,13 +18,9 @@ function prevSlide() {
   showSlide(currentIndex);
 }
 
-// Configura botones de control
-/* document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('.slider-wrapper').insertAdjacentHTML(
-    'beforeend',
-    '<button onclick="prevSlide()">Anterior</button><button onclick="nextSlide()">Siguiente</button>'
-  );
-}); */
-
 // Inicia el slider
 showSlide(currentIndex);
+
+setInterval(function() {
+  nextSlide();
+}, 7000);

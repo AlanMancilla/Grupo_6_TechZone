@@ -36,14 +36,18 @@
             </aside>
         
             <section class="max-w list">
-                
-                <h2>Resultados</h2>
-                <% if (locals.isLogged && locals.userLogged.role === 'Admin' ) { %>
-                    <a href="/productDetail/create">
-                        <div class="cart">Create</div>
-                    </a>
-                <% } %>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2>Resultados</h2>
+                    <% if (locals.isLogged && locals.userLogged.role === 'Admin' ) { %>
+                        <a style="border-bottom: solid 2px black;" href="/productDetail/create">
+                            Crear nuevo producto
+                        </a>
+                    <% } %>
+                </div>
                 <section class="products">
+                    <% if (products < 1) { %>
+                        <h3> No se encontraron productos</h3>
+                    <% } %>
                     <% products.forEach(product => { %>
                         <a href="/productDetail/<%= product.id %>">
                             <article>
